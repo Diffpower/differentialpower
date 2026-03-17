@@ -16,6 +16,7 @@
             line-height: 1.6;
             color: #333;
             background-color: #ffffff;
+            min-height: 100vh;
         }
 
         /* Navbar */
@@ -57,40 +58,11 @@
             color: #EB673A;
         }
 
-        /* Main Content Section */
+        /* Main Content - Empty White Space */
         .main-content {
             background-color: #ffffff;
-            color: #333;
-            text-align: center;
-            padding: 100px 20px;
-            min-height: 60vh;
-        }
-
-        .main-content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .main-content p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: #3C63AB;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #2a4a8a;
-            transform: translateY(-2px);
+            flex-grow: 1;
+            min-height: calc(100vh - 100px);
         }
 
         /* Footer */
@@ -119,14 +91,6 @@
                 margin-left: 0;
             }
 
-            .main-content h1 {
-                font-size: 32px;
-            }
-
-            .main-content p {
-                font-size: 16px;
-            }
-
             .navbar-logo {
                 height: 40px;
             }
@@ -144,12 +108,8 @@
         </ul>
     </nav>
 
-    <!-- Main Content Section (White Background) -->
-    <section class="main-content">
-        <h1>Welcome to Differential Power</h1>
-        <p>High-Efficiency DC-DC Power Converters for Industrial Applications</p>
-        <a href="company.html" class="btn-primary">Learn More</a>
-    </section>
+    <!-- Main Content - Empty White Space -->
+    <div class="main-content"></div>
 
     <!-- Footer -->
     <footer class="footer">
