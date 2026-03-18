@@ -67,12 +67,29 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;      /* Cambia de flex-start a center */
-        text-align: center;       /* Añade esto */
+        justify-content: flex-start;        /* Cambia de center a flex-start */
+        align-items: flex-start;            /* Cambia de center a flex-start */
+        text-align: left;                   /* Cambia de center a left */
         padding: 100px 80px;
         }
+.contact-container h1 {
+    font-size: 120px;                   /* Aumenta de 72px a 120px */
+    font-weight: 300;
+    margin-bottom: 40px;                /* Aumenta el espacio */
+    line-height: 1.2;
+    white-space: nowrap;                /* Una sola línea */
+}
 
+.contact-info {
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 15px 0;                     /* Aumenta el espacio entre líneas */
+    color: #E0E0E0;
+}
         .social-card {
     display: flex;
     align-items: center;
