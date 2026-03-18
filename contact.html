@@ -132,16 +132,18 @@
         }
 
         /* LinkedIn image button */
-       .linkedin-btn {
-            background: transparent !important;
-            padding: 0;             /* elimina espacio alrededor */
-            border-radius: 0;
+         .linkedin-btn {
+            margin-left: auto;
+            background: transparent;
+            padding: 0;
+            border-radius: 8px; /* para que el hover naranja tenga esquinas redondeadas */
           }
 
-        .linkedin-btn:hover {
-            background-color: rgba(235, 103, 58, 0.3);
-            transform: translateY(-2px);
-        }
+          .linkedin-btn:hover {
+            background-color: rgba(235, 103, 58, 0.3); /* hover naranja como antes */
+            transform: translateY(-2px);               /* opcional, como el efecto anterior */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* opcional */
+          }
 
         .linkedin-btn img {
             height: 42px; /* ajusta si quieres m��s grande */
