@@ -81,33 +81,76 @@
             white-space: nowrap;                /* Una sola línea */
         }
 
-        .contact-info {
+         .contact-info {
             margin-bottom: 60px;
             text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            width: 100%;
+            max-width: 900px;
         }
-        
-        .contact-info p {
-            font-size: 18px;
-            margin: 15px 0;                     /* Aumenta el espacio entre líneas */
-            color: #E0E0E0;
+
+        .contact-row {
+            display: grid;
+            grid-template-columns: 1fr auto; /* left info, right button */
+            align-items: center;
+            gap: 20px;
         }
-        .social-card {
+
+        .contact-item {
             display: flex;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 20px 40px;         /* Aumenta el padding */
-            text-decoration: none;
-            color: white;
-            transition: all 0.3s;
-            min-width: 300px;           /* Aumenta el ancho mínimo */
-            cursor: pointer;            /* Añade esto */
+            gap: 14px;
+            min-height: 44px;
         }
-        
-        .social-card:hover {
+
+        .contact-icon {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            font-size: 18px;
+            color: #E0E0E0;
+        }
+
+        /* mailto link */
+        .contact-link {
+            font-size: 18px;
+            color: #E0E0E0;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .contact-link:hover {
+            color: #ffffff;
+            border-bottom-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* LinkedIn image button */
+        .linkedin-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 8px;
+            padding: 8px 10px;
+            transition: all 0.3s;
+        }
+
+        .linkedin-btn:hover {
             background-color: rgba(235, 103, 58, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Añade sombra */
+            transform: translateY(-2px);
+        }
+
+        .linkedin-btn img {
+            height: 34px; /* ajusta si quieres m��s grande */
+            width: auto;
+            display: block;
         }
 
         /* Footer */
@@ -128,6 +171,7 @@
             .navbar {
                 flex-direction: column;
                 gap: 20px;
+                padding: 20px;
             }
 
             .nav-links {
@@ -139,6 +183,21 @@
             .navbar-logo {
                 height: 40px;
             }
+
+            .contact-container {
+                padding: 60px 24px;
+            }
+
+            .contact-container h1 {
+                font-size: 64px;
+                white-space: normal;
+            }
+
+            .contact-row {
+                grid-template-columns: 1fr; /* stack */
+                justify-items: start;
+            }
+        }
         }
     </style>
     
@@ -156,32 +215,50 @@
         </ul>
     </nav>
     
-    <!-- Contact Section -->
+     <!-- Contact Section -->
     <div class="contact-container">
         <h1>Let's<br>Connect</h1>
 
         <div class="contact-info">
-            <p>Playa de Riazor 12, Madrid, Spain, 28042</p>
-            <p>jcobos@differentialpower.com</p>
-            <p>diffpower@differentialpower.com</p>
-        </div>
-
-        <div class="social-links">
-           <a href="https://linkedin.com/company/tu-empresa" class="social-card" target="_blank">
-                <div class="social-card-text">
-                <h3>LinkedIn</h3>
-                <p>linkedin.com/company/tu-empresa</p>
+            <!-- Address row (icon + address only) -->
+            <div class="contact-row">
+                <div class="contact-item">
+                    <img src="Ubicacion.png" alt="Ubicación" class="contact-icon">
+                    <span class="contact-text">Playa de Riazor 12, Madrid, Spain, 28042</span>
                 </div>
-            <div class="social-icon">in</div>
-        </a>
+            </div>
 
-            <a href="https://twitter.com/tu-empresa" class="social-card" target="_blank">
-                <div class="social-card-text">
-                    <h3>X</h3>
-                    <p>x.com/tu-empresa</p>
+            <!-- Email jcobos + LinkedIn (generic link 1) -->
+            <div class="contact-row">
+                <div class="contact-item">
+                    <img src="Email.png" alt="Email" class="contact-icon">
+                    <a class="contact-link" href="mailto:jcobos@differentialpower.com">jcobos@differentialpower.com</a>
                 </div>
-                <div class="social-icon">𝕏</div>
-            </a>
+
+                <a class="linkedin-btn"
+                   href="https://www.linkedin.com/in/example-contact-1/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn (jcobos)">
+                    <img src="Linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+
+            <!-- Email diffpower + LinkedIn (generic link 2) -->
+            <div class="contact-row">
+                <div class="contact-item">
+                    <img src="Email.png" alt="Email" class="contact-icon">
+                    <a class="contact-link" href="mailto:diffpower@differentialpower.com">diffpower@differentialpower.com</a>
+                </div>
+
+                <a class="linkedin-btn"
+                   href="https://www.linkedin.com/in/example-contact-2/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn (diffpower)">
+                    <img src="Linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
         </div>
     </div>
     
