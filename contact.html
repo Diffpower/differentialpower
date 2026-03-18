@@ -92,10 +92,12 @@
         }
 
         .contact-row {
-            display: flex;           /* antes grid */
+            display: grid;
+            grid-template-columns: 1fr 70px; /* ajusta 70px al tamaño del icono */
             align-items: center;
-            gap: 12px;               /* separación entre texto y botón */
+            column-gap: 16px;
             width: 100%;
+            max-width: 900px; /* opcional: para que no se vaya al borde */
           }
 
         .contact-item {
@@ -132,17 +134,18 @@
         }
 
         /* LinkedIn image button */
-         .linkedin-btn {
-            margin-left: auto;
+         /* fuerza a que el botón esté al final de su columna */
+          .linkedin-btn {
+            justify-self: end;
             background: transparent;
-            padding: 0;
-            border-radius: 8px; /* para que el hover naranja tenga esquinas redondeadas */
+            padding: 6px;        /* crea “área” para el hover naranja */
+            border-radius: 8px;
           }
-
+        
           .linkedin-btn:hover {
-            background-color: rgba(235, 103, 58, 0.3); /* hover naranja como antes */
-            transform: translateY(-2px);               /* opcional, como el efecto anterior */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* opcional */
+            background-color: rgba(235, 103, 58, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
           }
 
         .linkedin-btn img {
