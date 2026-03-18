@@ -60,12 +60,37 @@
             color: #EB673A;
         }
 
-        /* Main Content - Empty White Space */
-        .main-content {
-            background-color: #ffffff;
-            flex-grow: 1;
-            min-height: calc(100vh - 100px);
+        /* Contact Container */
+       .contact-container {
+        background-color: #2C3E50;
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;      /* Cambia de flex-start a center */
+        text-align: center;       /* Añade esto */
+        padding: 100px 80px;
         }
+
+        .social-card {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px 40px;         /* Aumenta el padding */
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+    min-width: 300px;           /* Aumenta el ancho mínimo */
+    cursor: pointer;            /* Añade esto */
+}
+
+.social-card:hover {
+    background-color: rgba(235, 103, 58, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Añade sombra */
+}
 
         /* Footer */
         .footer {
@@ -124,13 +149,13 @@
         </div>
 
         <div class="social-links">
-            <a href="https://linkedin.com/company/tu-empresa" class="social-card" target="_blank">
+           <a href="https://linkedin.com/company/tu-empresa" class="social-card" target="_blank">
                 <div class="social-card-text">
-                    <h3>LinkedIn</h3>
-                    <p>linkedin.com/company/tu-empresa</p>
+                <h3>LinkedIn</h3>
+                <p>linkedin.com/company/tu-empresa</p>
                 </div>
-                <div class="social-icon">in</div>
-            </a>
+            <div class="social-icon">in</div>
+        </a>
 
             <a href="https://twitter.com/tu-empresa" class="social-card" target="_blank">
                 <div class="social-card-text">
