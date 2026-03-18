@@ -5,42 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+            min-height: 100vh;
         }
+
+        /* Navbar */
         .navbar {
-            background-color: #cccccc;
-            padding: 10px;
+            background-color: #C0C0C0;
+            color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 40px 20px 200px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            gap: 150px;
         }
-        .navbar img {
-            height: 40px;
+
+        .navbar-logo {
+            height: 100px;
+            width: auto;
+            flex-shrink: 0;
         }
+
         .nav-links {
-            margin-left: 20px;
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            margin-right: auto;
+            justify-content: flex-end;
         }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px;
+
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 25px;
+            transition: color 0.3s;
         }
-        .project-card {
-            background: white;
-            border: 1px solid #dddddd;
-            padding: 15px;
-            border-radius: 5px;
+
+        .nav-links a:hover {
+            color: #EB673A;
+        }
+
+        /* Main Content - Empty White Space */
+        .main-content {
+            background-color: #ffffff;
+            flex-grow: 1;
+            min-height: calc(100vh - 100px);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #C0C0C0;
+            color: black;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 4px solid #EB673A;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-direction: column;
+                margin-left: 0;
+            }
+
+            .navbar-logo {
+                height: 40px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <img src="DPx_logo.png" alt="DPx Logo">
-        <div class="nav-links">
-            <a href="company.html">Company</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html">
+        <img src="DPX_logo_recortado.png" alt="DPx Logo hola" class="navbar-logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="company.html">Company</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+   
     <div class="project-grid">
         <div class="project-card">
             <h3>48V DC-DC Converter</h3>
@@ -73,5 +145,10 @@
             </ul>
         </div>
     </div>
+
+     <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Differential Power (DPx). All rights reserved.</p>
+    </footer>
 </body>
 </html>
