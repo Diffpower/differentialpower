@@ -93,11 +93,10 @@
 
         .contact-row {
             display: grid;
-            grid-template-columns: 1fr 70px; /* ajusta 70px al tamaño del icono */
+            grid-template-columns: max-content 70px; /* izquierda NO se estira */
             align-items: center;
-            column-gap: 16px;
-            width: 100%;
-            max-width: 900px; /* opcional: para que no se vaya al borde */
+            column-gap: 10px; /* baja esto para acercar más */
+            width: fit-content; /* el grid se ajusta al contenido */
           }
 
         .contact-item {
