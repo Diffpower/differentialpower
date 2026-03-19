@@ -219,13 +219,20 @@
         <!-- Hero image (DPx's law) -->
         <section class="hero" aria-label="DPx's law">
             <img src="DPxLaw2.png" alt="DPx's law">
+            <map name="dpx-map">
+                <area shape="circle" coords="60,300" radius="20" href="#prototype-1" alt="60A">
+                <area shape="circle" coords="120,280" radius="20" href="#prototype-2" alt="100A">
+                <area shape="circle" coords="280,240" radius="20" href="#prototype-3" alt="500A">
+                <area shape="circle" coords="380,200" radius="20" href="#prototype-4" alt="2000A">
+                <area shape="circle" coords="460,180" radius="20" href="#prototype-5" alt="4000A">
+            </map>
         </section>
 
         <h2 class="section-title">Prototypes</h2>
 
         <section class="prototype-list" aria-label="Prototype list">
             <!-- Prototype 1: image left, text right -->
-            <article class="prototype">
+            <article class="prototype" id="prototype-1">
                 <div class="prototype-media">
                     <img src="prototype1.png" alt="48V DC-DC Converter prototype">
                 </div>
@@ -242,7 +249,7 @@
             </article>
 
             <!-- Prototype 2: image right, text left -->
-            <article class="prototype">
+            <article class="prototype" id="prototype-2">
                 <div class="prototype-media">
                     <img src="prototype2.png" alt="24V DC-DC Converter prototype">
                 </div>
@@ -259,7 +266,41 @@
             </article>
 
             <!-- Prototype 3: image left, text right -->
-            <article class="prototype">
+            <article class="prototype" id="prototype-3">
+                <div class="prototype-media">
+                    <img src="prototype3.png" alt="12V DC-DC Converter prototype">
+                </div>
+                <div class="prototype-content">
+                    <h3>12V DC-DC Converter</h3>
+                    <p>Specifications:</p>
+                    <ul>
+                        <li>Input Voltage: 12V</li>
+                        <li>Output Voltage: 5V</li>
+                        <li>Output Current: 2A</li>
+                        <li>Efficiency: 88%</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Prototype 4: image right, text left -->
+            <article class="prototype" id="prototype-4">
+                <div class="prototype-media">
+                    <img src="prototype2.png" alt="24V DC-DC Converter prototype">
+                </div>
+                <div class="prototype-content">
+                    <h3>24V DC-DC Converter</h3>
+                    <p>Specifications:</p>
+                    <ul>
+                        <li>Input Voltage: 24V</li>
+                        <li>Output Voltage: 5V</li>
+                        <li>Output Current: 3A</li>
+                        <li>Efficiency: 92%</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Prototype 5: image left, text right -->
+            <article class="prototype" id="prototype-5">
                 <div class="prototype-media">
                     <img src="prototype3.png" alt="12V DC-DC Converter prototype">
                 </div>
