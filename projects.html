@@ -122,7 +122,7 @@
             pointer-events: none;
         } */
 
-        .hotspot::before {
+        /* .hotspot::before {
             content: "";
             position: absolute;
             top: -80px;
@@ -137,8 +137,26 @@
             opacity: 0;
             transition: opacity 0.3s;
             pointer-events: none;
-        }
-
+        } */
+            .hotspot::before {
+                content: "";
+                position: absolute;
+                top: -120px;
+                left: -80px;
+                width: 120px;
+                height: 120px;
+                background-color: rgba(255, 255, 255, 0.95);
+                background-image: url('DPX_logo.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                opacity: 0;
+                transition: opacity 0.3s;
+                pointer-events: none;
+                padding: 10px;
+            }
         
         .hotspot:hover::before {
             opacity: 1;
