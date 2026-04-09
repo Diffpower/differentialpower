@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - Differential Power</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -19,97 +21,164 @@
             color: #333;
             background-color: #ffffff;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Navbar */
+        /* Navbar Mejorada */
         .navbar {
             background-color: #000000;
             color: white;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
-            padding: 20px 40px 20px 200px;
+            padding: 15px 50px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            gap: 150px;
             border-bottom: 2px solid #EB673A;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
         .navbar-logo {
-            height: 100px;
+            height: 50px;
             width: auto;
             flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-logo:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 50px;
-            margin-right: auto;
-            justify-content: flex-end;
+            gap: 40px;
+            align-items: center;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: 300;
-            font-size: 25px;
-            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #EB673A;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-links a:hover {
             color: #EB673A;
         }
 
+        .cta-button {
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(235, 103, 58, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(235, 103, 58, 0.5);
+        }
+
         /* Main Content - Video Player */
         .main-content {
-            background-color: #000;
+            background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
             flex-grow: 1;
-            min-height: 70vh;
+            min-height: 85vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
-        }
-        
-        .video-section {
-            width: 100%;
-            max-width: 1200px;
-        }
-        
-        .video-title {
-            font-family: 'Poppins', sans-serif;
-            color: white;
-            font-size: 48px;
-            margin-bottom: 10px;
-            text-align: center;
-            font-weight: 300;
-        }
-        
-        .video-subtitle {
-            color: #EB673A;
-            font-size: 18px;
-            text-align: center;
-            margin-bottom: 30px;
-            font-family: 'Poppins', sans-serif;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
         }
 
-        
-        @media (max-width: 768px) {
-            .video-title {
-                font-size: 24px;
-                margin-bottom: 15px;
-            }
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(235, 103, 58, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .video-section {
+            width: 100%;
+            max-width: 1000px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .video-title {
+            font-family: 'Space Grotesk', sans-serif;
+            color: white;
+            font-size: 56px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-title span {
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .video-subtitle {
+            color: #CCCCCC;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
         }
 
         .video-player-container {
             width: 100%;
-            max-width: 1200px;
             background: #000;
-            border-radius: 10px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 60px rgba(235, 103, 58, 0.3), 0 0 40px rgba(235, 103, 58, 0.1);
+            border: 1px solid rgba(235, 103, 58, 0.2);
+            transition: all 0.3s ease;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .video-player-container:hover {
+            box-shadow: 0 30px 80px rgba(235, 103, 58, 0.4), 0 0 60px rgba(235, 103, 58, 0.15);
+            transform: translateY(-5px);
         }
 
         .video-player-container iframe {
@@ -119,63 +188,244 @@
             display: block;
         }
 
+        /* Info Section */
         .info-section {
-            padding: 60px 40px;
-            text-align: center;
-            background-color: #ffffff;
+            padding: 100px 50px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
+            animation: fadeIn 1s ease-out 0.3s both;
         }
 
-       .info-section h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 48px;
+        .info-section h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 56px;
             margin-bottom: 20px;
-            color: #EB673A;
+            color: #000;
             font-weight: 700;
+            position: relative;
+            display: inline-block;
         }
 
-        .info-section h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 32px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #333;
-            font-weight: 600;
+        .info-section h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+            border-radius: 2px;
+        }
+
+        .info-section h1 span {
+            color: #EB673A;
         }
 
         .info-section p {
             font-size: 16px;
             line-height: 1.8;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            color: #555;
+            font-weight: 300;
+        }
+
+        .info-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .info-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            color: #000;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-section h2::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(180deg, #EB673A 0%, #FF8C42 100%);
+            border-radius: 2px;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #EB673A;
+            transition: all 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 30px rgba(235, 103, 58, 0.15);
+        }
+
+        .mission-card p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #EB673A;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(235, 103, 58, 0.2);
+        }
+
+        .value-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #EB673A;
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
         /* Footer */
         .footer {
             background-color: #000000;
             color: white;
-            text-align: center;
-            padding: 30px 20px;
+            padding: 60px 50px 30px;
             border-top: 4px solid #EB673A;
         }
 
-        .footer p {
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-section h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #EB673A;
+        }
+
+        .footer-section p, .footer-section a {
+            font-size: 14px;
+            color: #CCCCCC;
+            margin-bottom: 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #EB673A;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(235, 103, 58, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #EB673A;
+            text-decoration: none;
+            transition: all 0.3s ease;
             margin: 0;
+        }
+
+        .social-links a:hover {
+            background: #EB673A;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
-                gap: 20px;
-                padding: 20px 20px;
+                gap: 15px;
+                padding: 15px 20px;
             }
 
             .nav-links {
-                gap: 15px;
+                gap: 20px;
                 flex-direction: column;
-                margin-left: 0;
+                width: 100%;
             }
 
             .navbar-logo {
@@ -183,24 +433,50 @@
             }
 
             .main-content {
-                min-height: 50vh;
-                padding: 20px 10px;
-            }
-
-            .info-section {
+                min-height: 60vh;
                 padding: 40px 20px;
             }
 
+            .video-title {
+                font-size: 36px;
+                margin-bottom: 15px;
+            }
+
+            .video-subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .info-section {
+                padding: 60px 20px;
+            }
+
             .info-section h1 {
-                font-size: 24px;
+                font-size: 36px;
             }
 
             .info-section h2 {
-                font-size: 20px;
+                font-size: 28px;
             }
 
             .info-section p {
                 font-size: 14px;
+            }
+
+            .mission-card {
+                padding: 25px;
+            }
+
+            .value-card {
+                padding: 20px;
+            }
+
+            .footer {
+                padding: 40px 20px 20px;
+            }
+
+            .footer-content {
+                gap: 25px;
             }
         }
     </style>
@@ -215,42 +491,89 @@
             <li><a href="company.html">Company</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="cta-button">Get Started</a></li>
         </ul>
     </nav>
     
     <!-- Main Content - Video Player -->
     <div class="main-content">
-    <div class="video-section">
-        <h1 class="video-title">Powering the next generation of AI chips</h1>
-        <!-- <p class="video-subtitle">Differential Power - Innovación en tecnología</p> -->
-        <div class="video-player-container">
-            <iframe 
-                width="100%" 
-                height="600" 
-                src="https://www.youtube.com/embed/7QEd2HjuOpM?autoplay=1&modestbranding=1&rel=0" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
+        <div class="video-section">
+            <h1 class="video-title">Powering the <span>Next Generation</span></h1>
+            <p class="video-subtitle">Differential Power - Innovación en tecnología</p>
+            <div class="video-player-container">
+                <iframe 
+                    width="100%" 
+                    height="600" 
+                    src="https://www.youtube.com/embed/7QEd2HjuOpM?autoplay=1&modestbranding=1&rel=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </div>
-</div>
 
     <!-- Info Section -->
     <div class="info-section">
-        <h1>Sobre Nosotros - Differential Power</h1>
-        <p>Bienvenido a Differential Power. Somos una empresa dedicada a ofrecer soluciones innovadoras en el campo de la tecnología.</p>
-        
-        <h2>Nuestra Misión</h2>
-        <p>Nuestra misión es proporcionar a nuestros clientes productos y servicios que superen sus expectativas y les ayuden a alcanzar sus objetivos.</p>
-        
-        <h2>Por qué elegirnos</h2>
-        <p>Elegir Differential Power significa optar por calidad, innovación y un compromiso inquebrantable con la satisfacción del cliente.</p>
+        <div class="info-content">
+            <h1>Sobre <span>Nosotros</span></h1>
+            <p>Bienvenido a Differential Power. Somos una empresa dedicada a ofrecer soluciones innovadoras en el campo de la tecnología, con un equipo comprometido en entregar excelencia.</p>
+            
+            <h2>Nuestra Misión</h2>
+            <div class="mission-card">
+                <p>Proporcionar a nuestros clientes productos y servicios que superen sus expectativas y les ayuden a alcanzar sus objetivos, siendo el partner tecnológico de confianza en la industria.</p>
+            </div>
+            
+            <h2>Por qué elegirnos</h2>
+            <div class="values-container">
+                <div class="value-card">
+                    <h3>🎯 Innovación</h3>
+                    <p>Soluciones de vanguardia adaptadas a tu negocio</p>
+                </div>
+                <div class="value-card">
+                    <h3>💼 Experiencia</h3>
+                    <p>Años de trayectoria en el sector tecnológico</p>
+                </div>
+                <div class="value-card">
+                    <h3>🤝 Compromiso</h3>
+                    <p>Dedicación total a la satisfacción del cliente</p>
+                </div>
+                <div class="value-card">
+                    <h3>⚡ Eficiencia</h3>
+                    <p>Resultados rápidos y de calidad garantizada</p>
+                </div>
+            </div>
+        </div>
     </div>
     
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Differential Power (DPx). All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre DPx</h3>
+                <p>Differential Power es tu partner tecnológico para el futuro.</p>
+                <div class="social-links">
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <a href="company.html">Sobre Nosotros</a>
+                <a href="projects.html">Proyectos</a>
+                <a href="contact.html">Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📧 info@differentialpower.com</p>
+                <p>📱 +34 XXX XXX XXX</p>
+                <p>📍 España</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Differential Power (DPx). Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
