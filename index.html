@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Differential Power - DPx</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Differential Power - Next Generation Power Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,90 +13,606 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #ffffff;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
         /* Navbar */
         .navbar {
-            background-color: #2b3137;
+            background-color: #000000;
             color: white;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
-            padding: 20px 40px 20px 200px;
-            position: sticky;
+            padding: 15px 50px;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
-            gap: 150px;
             border-bottom: 2px solid #EB673A;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
         .navbar-logo {
-            height: 100px;
+            height: 50px;
             width: auto;
             flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-logo:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 50px;
-            margin-right: auto;
-            justify-content: flex-end;
+            gap: 40px;
+            align-items: center;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: 300;
-            font-size: 25px;
-            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #EB673A;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-links a:hover {
             color: #EB673A;
         }
 
-        /* Main Content - Empty White Space */
-        .main-content {
-            background-color: #2C3E50;
-            flex-grow: 1;
-            min-height: calc(100vh - 100px);
+        .cta-button {
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(235, 103, 58, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(235, 103, 58, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 50px 80px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(235, 103, 58, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(235, 103, 58, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #CCCCCC;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .primary-btn, .secondary-btn {
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid #EB673A;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(235, 103, 58, 0.3);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(235, 103, 58, 0.5);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: #EB673A;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(235, 103, 58, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(235, 103, 58, 0.3), 0 0 40px rgba(235, 103, 58, 0.1);
+            border: 1px solid rgba(235, 103, 58, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(235, 103, 58, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
+            padding: 100px 50px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #000;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-top: 30px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #EB673A;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(235, 103, 58, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            color: #EB673A;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Solutions Section */
+        .solutions {
+            background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+            padding: 100px 50px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solutions::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(235, 103, 58, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .solutions-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solutions .section-title {
+            color: white;
+        }
+
+        .solutions .section-title::after {
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+        }
+
+        .solutions .section-subtitle {
+            color: #CCCCCC;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .solution-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 35px;
+            border-radius: 12px;
+            border-left: 4px solid #EB673A;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .solution-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(235, 103, 58, 0.2);
+        }
+
+        .solution-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #EB673A;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .solution-card p {
+            color: #CCCCCC;
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+            padding: 80px 50px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .cta-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-btn {
+            background: white;
+            color: #EB673A;
+            padding: 16px 50px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
 
         /* Footer */
         .footer {
-            background-color: #2b3137;
+            background-color: #000000;
             color: white;
-            text-align: center;
-            padding: 30px 20px;
+            padding: 60px 50px 30px;
             border-top: 4px solid #EB673A;
         }
 
-        .footer p {
-            margin: 0;
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-section h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #EB673A;
+        }
+
+        .footer-section p, .footer-section a {
+            font-size: 14px;
+            color: #CCCCCC;
+            margin-bottom: 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #EB673A;
+        }
+
+        .social-links-footer {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links-footer a {
+            width: 40px;
+            height: 40px;
+            background: rgba(235, 103, 58, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #EB673A;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links-footer a:hover {
+            background: #EB673A;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 52px;
+            }
+        }
+
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
+                padding: 15px 20px;
             }
 
             .nav-links {
-                gap: 15px;
+                gap: 20px;
                 flex-direction: column;
-                margin-left: 0;
+                width: 100%;
             }
 
             .navbar-logo {
                 height: 40px;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+                margin-top: 150px;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .features {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .solutions {
+                padding: 60px 20px;
+            }
+
+            .cta-section {
+                padding: 60px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 36px;
+            }
+
+            .footer {
+                padding: 40px 20px 20px;
+            }
+
+            .footer-content {
+                gap: 25px;
             }
         }
     </style>
@@ -105,21 +621,156 @@
     <!-- Navbar -->
     <nav class="navbar">
         <a href="index.html">
-        <img src="DPX_logo_recortado.png" alt="DPx Logo hola" class="navbar-logo">
+            <img src="DPX_logo_recortado.png" alt="DPx Logo" class="navbar-logo">
         </a>
         <ul class="nav-links">
             <li><a href="company.html">Company</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="cta-button">Get Started</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content - Empty White Space -->
-    <div class="main-content"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Powering the <span>Next Generation</span> of AI Chips</h1>
+                <p>Revolutionary power delivery solutions that redefine efficiency, reliability, and performance. Experience the future of energy management for data centers and AI infrastructure.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="primary-btn">Get Started Today</a>
+                    <a href="company.html" class="secondary-btn">Learn More →</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/500x500?text=AI+Chip+Innovation" alt="AI Innovation">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Why Differential Power</h2>
+            <p class="section-subtitle">We combine cutting-edge technology with industry expertise to deliver solutions that transform how data centers operate.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Next-Gen Efficiency</h3>
+                    <p>Revolutionizing the results demonstrated in the industry with our patent-backed power delivery systems that maximize performance.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Enterprise Reliability</h3>
+                    <p>99.99% uptime guaranteed with redundant systems and real-time monitoring for mission-critical infrastructure.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Scalable Innovation</h3>
+                    <p>From startup prototypes to enterprise deployments, our solutions scale seamlessly with your growing needs.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Intelligent Control</h3>
+                    <p>AI-driven power management that optimizes consumption in real-time, reducing costs and environmental impact.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Expert Support</h3>
+                    <p>Dedicated technical team available 24/7 to ensure your infrastructure performs at peak efficiency.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Data Insights</h3>
+                    <p>Comprehensive analytics and reporting tools to monitor, analyze, and optimize your power infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions">
+        <div class="solutions-content">
+            <h2 class="section-title">Our Solutions</h2>
+            <p class="section-subtitle">Tailored power delivery systems designed for the specific needs of modern data centers and AI infrastructure.</p>
+            
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>🏢 Data Center Solutions</h3>
+                    <p>Enterprise-grade power delivery systems optimized for maximum efficiency, reliability, and scalability in large-scale data center operations.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3>🤖 AI Infrastructure</h3>
+                    <p>Specialized power management for GPU clusters and AI accelerators, ensuring consistent performance under demanding workloads.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3>☁️ Cloud Computing</h3>
+                    <p>Scalable power solutions for cloud infrastructure providers with dynamic load balancing and adaptive energy management.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3>🔧 Custom Engineering</h3>
+                    <p>Bespoke power delivery designs tailored to your specific architectural requirements and performance goals.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3>📱 Edge Computing</h3>
+                    <p>Compact, efficient power solutions for distributed edge computing environments and remote installations.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3>🌱 Sustainable Power</h3>
+                    <p>Eco-friendly power management systems that reduce carbon footprint while maintaining peak performance metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Infrastructure?</h2>
+            <p>Join leading companies worldwide who trust Differential Power to deliver next-generation power solutions.</p>
+            <a href="contact.html" class="cta-btn">Start Your Journey Today</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Differential Power (DPx). All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About DPx</h3>
+                <p>Differential Power is your technology partner for the future, delivering innovative power solutions for the next generation of computing.</p>
+                <div class="social-links-footer">
+                    <a href="https://es.linkedin.com/company/differential-power-s-l" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="company.html">Company</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 info@differentialpower.com</p>
+                <p>📱 +34 XXX XXX XXX</p>
+                <p>📍 Madrid, Spain</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Differential Power (DPx). All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
