@@ -191,15 +191,15 @@
         /* Info Section */
         .info-section {
             padding: 100px 50px;
-            background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
+            background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
             animation: fadeIn 1s ease-out 0.3s both;
         }
 
         .info-section h1 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 56px;
             margin-bottom: 20px;
-            color: #000;
+            color: #FFFFFF;
             font-weight: 700;
             position: relative;
             display: inline-block;
@@ -225,7 +225,7 @@
             line-height: 1.8;
             margin-bottom: 20px;
             max-width: 900px;
-            color: #555;
+            color: #CCCCCC;
             font-weight: 300;
         }
 
@@ -235,11 +235,11 @@
         }
 
         .info-section h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 36px;
             margin-top: 60px;
             margin-bottom: 30px;
-            color: #000;
+            color: #FFFFFF;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -255,22 +255,22 @@
         }
 
         .mission-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
             padding: 40px;
             border-radius: 12px;
             margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             border-left: 4px solid #EB673A;
             transition: all 0.3s ease;
         }
-
+        
         .mission-card:hover {
             transform: translateX(5px);
-            box-shadow: 0 8px 30px rgba(235, 103, 58, 0.15);
+            box-shadow: 0 8px 30px rgba(235, 103, 58, 0.25);
         }
-
+        
         .mission-card p {
-            color: #555;
+            color: #CCCCCC;
             line-height: 1.8;
             font-size: 16px;
         }
@@ -283,20 +283,21 @@
         }
 
         .value-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             border-top: 4px solid #EB673A;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
-
+        
         .value-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(235, 103, 58, 0.2);
+            box-shadow: 0 12px 40px rgba(235, 103, 58, 0.3);
         }
-
+        
         .value-card h3 {
             font-family: 'Space Grotesk', sans-serif;
             color: #EB673A;
@@ -304,13 +305,12 @@
             font-size: 20px;
             font-weight: 600;
         }
-
+        
         .value-card p {
-            color: #666;
+            color: #CCCCCC;
             font-size: 14px;
             line-height: 1.6;
         }
-
         /* Footer */
         .footer {
             background-color: #000000;
