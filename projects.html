@@ -221,6 +221,40 @@
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
+        .hero-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 56px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(235, 103, 58, 0.2);
+            animation: fadeInUp 0.8s ease-out;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .hero-section-title span {
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+            border-radius: 2px;
+            box-shadow: 0 0 15px rgba(235, 103, 58, 0.6);
+        }
+
         .hotspot {
             position: absolute;
             width: var(--size);
@@ -636,6 +670,8 @@
         <section id="dc-dc" class="content-section active">
             <!-- Hero Section with DPx Law -->
             <section class="hero-section" aria-label="DPx's law interactive diagram">
+                <h2 class="hero-section-title"><span>DC-DC</span> Converters</h2>    
+                
                 <p class="hero-description">
                     The DPx Law showcases our evolution from our founding in 2019, when we first demonstrated our patented technology through a small prototype, to the kiloampere-level converters we have successfully achieved today.
                 </p>
