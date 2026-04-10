@@ -221,30 +221,34 @@
             transform: translateY(-3px);
         }
 
-       .hero-image {
+      .hero-image {
             position: absolute;
-            right: 0;
+            right: -100px;
             top: 50%;
             transform: translateY(-50%);
-            width: 50%;
-            height: 100%;
-            opacity: 0.8;
+            width: 60%;
+            height: 120%;
+            opacity: 0.6;
             animation: scaleIn 0.8s ease-out;
             z-index: 0;
+            mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%);
         }
         
         .hero-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 16px;
-            filter: blur(2px);
-            transition: all 0.3s ease;
+            border-radius: 0;
+            filter: none;
+            transition: all 0.4s ease;
         }
         
         .hero-image img:hover {
-            filter: blur(0px);
-            opacity: 1;
+            opacity: 0.75;
+            filter: none;
+        }
+        
         }
         /* Features Section */
         .features {
@@ -648,8 +652,8 @@
                 </div>
             </div>
             <div class="hero-image">
-                    <img src="Matrix.PNG" alt="matrix Chip">
-                </div>
+                <img src="Matrix.PNG" alt="Matrix Background">
+            </div>
         </div>
     </section>
 
