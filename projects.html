@@ -7,6 +7,10 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -614,7 +618,7 @@
             <section class="prototype-list" aria-label="Prototype list">
 
                 <!-- Prototype 1: Right entrance -->
-                <article class="prototype" id="prototype-1">
+                <article class="prototype" id="prototype-1" data-aos="slide-in-right">
                     <div class="prototype-media">
                         <img src="Proof_Concept1.png" alt="48V DC-DC Converter prototype - Proof of Concept">
                     </div>
@@ -632,7 +636,7 @@
                 </article>
 
                 <!-- Prototype 2: Left entrance -->
-                <article class="prototype" id="prototype-2">
+                <article class="prototype" id="prototype-2" data-aos="slide-in-left">
                     <div class="prototype-media">
                         <img src="UFO.PNG" alt="24V DC-DC Converter prototype - UFO">
                     </div>
@@ -650,7 +654,7 @@
                 </article>
 
                 <!-- Prototype 3: Right entrance -->
-                <article class="prototype" id="prototype-3">
+                <article class="prototype" id="prototype-3" data-aos="slide-in-right">
                     <div class="prototype-media">
                         <img src="Animal.PNG" alt="12V DC-DC Converter prototype - The Animal">
                     </div>
@@ -668,7 +672,7 @@
                 </article>
 
                 <!-- Prototype 4: Left entrance -->
-                <article class="prototype" id="prototype-4">
+                <article class="prototype" id="prototype-4" data-aos="slide-in-left">
                     <div class="prototype-media">
                         <img src="Matrix.PNG" alt="24V DC-DC Converter prototype - Matrix">
                     </div>
@@ -686,7 +690,7 @@
                 </article>
 
                 <!-- Prototype 5: Right entrance -->
-                <article class="prototype" id="prototype-5">
+                <article class="prototype" id="prototype-5" data-aos="slide-in-right">
                     <div class="prototype-media">
                         <img src="Split.PNG" alt="12V DC-DC Converter prototype - Split">
                     </div>
@@ -704,7 +708,7 @@
                 </article>
 
                 <!-- Prototype 6: Left entrance -->
-                <article class="prototype" id="prototype-6">
+                <article class="prototype" id="prototype-6" data-aos="slide-in-left">
                     <div class="prototype-media">
                         <img src="Emerald.png" alt="12V DC-DC Converter prototype - Emerald">
                     </div>
@@ -722,7 +726,7 @@
                 </article>
 
                 <!-- Prototype 7: Right entrance -->
-                <article class="prototype" id="prototype-7">
+                <article class="prototype" id="prototype-7" data-aos="slide-in-right">
                     <div class="prototype-media">
                         <img src="Onyx3.PNG" alt="12V DC-DC Converter prototype - Onyx">
                     </div>
@@ -785,6 +789,9 @@
             });
         });
     </script>
-
+AOS.init({
+    duration: 800,
+    offset: 100
+});
 </body>
 </html>
