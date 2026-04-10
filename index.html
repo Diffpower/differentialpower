@@ -257,7 +257,47 @@
             padding: 100px 50px;
         }
 
+
+
+
+
+
+
+
         .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -1px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+    border-radius: 2px;
+}
+
+
+
+
+
+
+
+
+
+        
+
+        /* .section-title {
             font-family: 'Outfit', sans-serif;
             font-size: 56px;
             font-weight: 600;
@@ -276,7 +316,7 @@
             height: 4px;
             background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
             border-radius: 2px;
-        }
+        } */
 
         /* .section-subtitle {
             font-size: 18px;
@@ -312,7 +352,7 @@
             animation: fadeInUp 0.8s ease-out;
         } */
 
-        .feature-card {
+        /* .feature-card {
             background: white;
             padding: 40px;
             border-radius: 12px;
@@ -326,7 +366,36 @@
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 12px 40px rgba(235, 103, 58, 0.2);
-        }
+        } */
+
+
+        .feature-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-top: 4px solid #EB673A;
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #EB673A 0%, #FF8C42 100%);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(235, 103, 58, 0.2);
+    border-top-color: #FF8C42;
+}
 
        .feature-icon {
             font-size: 48px;
