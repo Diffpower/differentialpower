@@ -128,6 +128,17 @@
             pointer-events: none;
         }
 
+        /* .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        } */
+
         .hero-content {
             max-width: 1200px;
             width: 100%;
@@ -137,6 +148,11 @@
             align-items: center;
             position: relative;
             z-index: 1;
+        }
+        
+        .hero-text {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-text h1 {
@@ -205,24 +221,31 @@
             transform: translateY(-3px);
         }
 
-        .hero-image {
+       .hero-image {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            height: 100%;
+            opacity: 0.8;
             animation: scaleIn 0.8s ease-out;
+            z-index: 0;
         }
-
+        
         .hero-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(235, 103, 58, 0.3), 0 0 40px rgba(235, 103, 58, 0.1);
-            border: 1px solid rgba(235, 103, 58, 0.2);
+            filter: blur(2px);
             transition: all 0.3s ease;
         }
-
+        
         .hero-image img:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(235, 103, 58, 0.4);
+            filter: blur(0px);
+            opacity: 1;
         }
-
         /* Features Section */
         .features {
             background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
@@ -624,9 +647,9 @@
                     <a href="company.html" class="secondary-btn">Learn More →</a>
                 </div>
             </div>
-            <!-- <div class="hero-image">
-                <img src="https://via.placeholder.com/500x500?text=AI+Chip+Innovation" alt="AI Innovation">
-            </div> -->
+            <div class="hero-image">
+                    <img src="Onyx1.PNG" alt="Onyx Chip">
+                </div>
         </div>
     </section>
 
