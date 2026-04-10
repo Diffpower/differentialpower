@@ -105,7 +105,7 @@
         /* Page Header */
         .page-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 40px;
             animation: fadeInUp 0.8s ease-out;
         }
 
@@ -132,6 +132,50 @@
             margin: 0 auto;
             font-weight: 300;
             line-height: 1.8;
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+            margin-bottom: 80px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .tab-button {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 15px 40px;
+            border: 2px solid rgba(235, 103, 58, 0.5);
+            background: transparent;
+            color: #CCCCCC;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .tab-button:hover {
+            border-color: #EB673A;
+            color: #EB673A;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+            border-color: #EB673A;
+            color: white;
+            box-shadow: 0 8px 25px rgba(235, 103, 58, 0.4);
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
         }
 
         /* Hero Section with DPx Law */
@@ -198,7 +242,6 @@
             pointer-events: none;
             padding: 10px;
             border-radius: 8px;
-            /* border: 2px solid rgba(235, 103, 58, 0.5); */
         }
 
         .hotspot:hover::before {
@@ -257,37 +300,7 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            /* opacity: 0; */
         }
-
-        /* Animaciones de entrada alternas */
-        /* .prototype:nth-child(1) {
-            animation: slideInRight 0.8s ease-out 0.2s both;
-        }
-
-        .prototype:nth-child(2) {
-            animation: slideInLeft 0.8s ease-out 0.3s both;
-        }
-
-        .prototype:nth-child(3) {
-            animation: slideInRight 0.8s ease-out 0.4s both;
-        }
-
-        .prototype:nth-child(4) {
-            animation: slideInLeft 0.8s ease-out 0.5s both;
-        }
-
-        .prototype:nth-child(5) {
-            animation: slideInRight 0.8s ease-out 0.6s both;
-        }
-
-        .prototype:nth-child(6) {
-            animation: slideInLeft 0.8s ease-out 0.7s both;
-        }
-
-        .prototype:nth-child(7) {
-            animation: slideInRight 0.8s ease-out 0.8s both;
-        } */
 
         .prototype:hover {
             background: rgba(235, 103, 58, 0.1);
@@ -315,9 +328,6 @@
             filter: drop-shadow(0 8px 20px rgba(235, 103, 58, 0.2));
             transition: transform 0.4s ease;
         }
-/* 
-        .prototype-media img:hover {
-        } */
 
         .prototype-content h3 {
             font-family: 'Outfit', sans-serif;
@@ -516,6 +526,15 @@
                 font-size: 16px;
             }
 
+            .category-tabs {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .tab-button {
+                width: 100%;
+            }
+
             .section-title {
                 font-size: 36px;
             }
@@ -593,157 +612,180 @@
             <p>Revolutionary power conversion solutions engineered to transform data center infrastructure and redefine the future of energy delivery.</p>
         </section>
 
-        <!-- Hero Section with DPx Law -->
-        <section class="hero-section" aria-label="DPx's law interactive diagram">
-            <div class="hero-container">
-                <div class="hero">
-                    <img src="DPxLaw4.png" alt="DPx's law - Interactive Prototype Guide">
-                    <a href="#prototype-1" class="hotspot" data-image="Proof_concept.png" style="left: 13.75%; top: 77%; --size: 30px;" title="Proof of Concept - 60A"></a>
-                    <a href="#prototype-2" class="hotspot" data-image="UFO.PNG" style="left: 23.9%; top: 70.05%; --size: 30px;" title="UFO - 100A"></a>
-                    <a href="#prototype-3" class="hotspot" data-image="Animal.PNG" style="left: 33.85%; top: 63.15%; --size: 30px;" title="The Animal - 200A"></a>
-                    <a href="#prototype-4" class="hotspot" data-image="Matrix.PNG" style="left: 43.7%; top: 54.6%; --size: 30px;" title="Matrix - 500A"></a>
-                    <a href="#prototype-5" class="hotspot" data-image="Split.PNG" style="left: 53.65%; top: 48%; --size: 30px;" title="Split - 1000A"></a>
-                    <a href="#prototype-6" class="hotspot" data-image="Emerald.png" style="left: 63.6%; top: 41%; --size: 30px;" title="Emerald - 2000A"></a>
-                    <a href="#prototype-7" class="hotspot" data-image="Onyx1.PNG" style="left: 73.3%; top: 35%; --size: 30px;" title="Onyx - 4000A"></a>
+        <!-- Category Tabs -->
+        <div class="category-tabs">
+            <button class="tab-button active" data-tab="dc-dc">DC-DC Converters</button>
+            <button class="tab-button" data-tab="dc-loads">DC Loads</button>
+        </div>
+
+        <!-- DC-DC Converters Section -->
+        <section id="dc-dc" class="content-section active">
+            <!-- Hero Section with DPx Law -->
+            <section class="hero-section" aria-label="DPx's law interactive diagram">
+                <div class="hero-container">
+                    <div class="hero">
+                        <img src="DPxLaw4.png" alt="DPx's law - Interactive Prototype Guide">
+                        <a href="#prototype-1" class="hotspot" data-image="Proof_concept.png" style="left: 13.75%; top: 77%; --size: 30px;" title="Proof of Concept - 60A"></a>
+                        <a href="#prototype-2" class="hotspot" data-image="UFO.PNG" style="left: 23.9%; top: 70.05%; --size: 30px;" title="UFO - 100A"></a>
+                        <a href="#prototype-3" class="hotspot" data-image="Animal.PNG" style="left: 33.85%; top: 63.15%; --size: 30px;" title="The Animal - 200A"></a>
+                        <a href="#prototype-4" class="hotspot" data-image="Matrix.PNG" style="left: 43.7%; top: 54.6%; --size: 30px;" title="Matrix - 500A"></a>
+                        <a href="#prototype-5" class="hotspot" data-image="Split.PNG" style="left: 53.65%; top: 48%; --size: 30px;" title="Split - 1000A"></a>
+                        <a href="#prototype-6" class="hotspot" data-image="Emerald.png" style="left: 63.6%; top: 41%; --size: 30px;" title="Emerald - 2000A"></a>
+                        <a href="#prototype-7" class="hotspot" data-image="Onyx1.PNG" style="left: 73.3%; top: 35%; --size: 30px;" title="Onyx - 4000A"></a>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Prototypes Section -->
-        <section class="prototypes-section">
-            <div class="prototypes-header">
-                <h2 class="section-title">Prototypes</h2>
-            </div>
+            <!-- Prototypes Section -->
+            <section class="prototypes-section">
+                <div class="prototypes-header">
+                    <h2 class="section-title">Prototypes</h2>
+                </div>
 
-            <section class="prototype-list" aria-label="Prototype list">
+                <section class="prototype-list" aria-label="Prototype list">
 
-                <!-- Prototype 1: Right entrance -->
-                <article class="prototype" id="prototype-1" data-aos="slide-left">
-                    <div class="prototype-media">
-                        <img src="Proof_Concept1.png" alt="48V DC-DC Converter prototype - Proof of Concept">
-                    </div>
-                    <div class="prototype-content">
-                        <h3>Proof of Concept</h3>
-                        <p><strong>Entry-Level Power Conversion</strong></p>
-                        <ul>
-                            <li>Input Voltage: 48V</li>
-                            <li>Output Voltage: 12V</li>
-                            <li>Output Current: 5A</li>
-                            <li>Efficiency: 90%</li>
-                            <li>Form Factor: Modular Design</li>
-                        </ul>
-                    </div>
-                </article>
+                    <!-- Prototype 1 -->
+                    <article class="prototype" id="prototype-1" data-aos="slide-left">
+                        <div class="prototype-media">
+                            <img src="Proof_Concept1.png" alt="48V DC-DC Converter prototype - Proof of Concept">
+                        </div>
+                        <div class="prototype-content">
+                            <h3>Proof of Concept</h3>
+                            <p><strong>Entry-Level Power Conversion</strong></p>
+                            <ul>
+                                <li>Input Voltage: 48V</li>
+                                <li>Output Voltage: 12V</li>
+                                <li>Output Current: 5A</li>
+                                <li>Efficiency: 90%</li>
+                                <li>Form Factor: Modular Design</li>
+                            </ul>
+                        </div>
+                    </article>
 
-                <!-- Prototype 2: Left entrance -->
-                <article class="prototype" id="prototype-2" data-aos="slide-right">
-                    <div class="prototype-media">
-                        <img src="UFO.PNG" alt="24V DC-DC Converter prototype - UFO">
-                    </div>
-                    <div class="prototype-content">
-                        <h3>UFO</h3>
-                        <p><strong>Compact & Efficient</strong></p>
-                        <ul>
-                            <li>Input Voltage: 24V</li>
-                            <li>Output Voltage: 5V</li>
-                            <li>Output Current: 3A</li>
-                            <li>Efficiency: 92%</li>
-                            <li>Thermal Management: Enhanced</li>
-                        </ul>
-                    </div>
-                </article>
+                    <!-- Prototype 2 -->
+                    <article class="prototype" id="prototype-2" data-aos="slide-right">
+                        <div class="prototype-media">
+                            <img src="UFO.PNG" alt="24V DC-DC Converter prototype - UFO">
+                        </div>
+                        <div class="prototype-content">
+                            <h3>UFO</h3>
+                            <p><strong>Compact & Efficient</strong></p>
+                            <ul>
+                                <li>Input Voltage: 24V</li>
+                                <li>Output Voltage: 5V</li>
+                                <li>Output Current: 3A</li>
+                                <li>Efficiency: 92%</li>
+                                <li>Thermal Management: Enhanced</li>
+                            </ul>
+                        </div>
+                    </article>
 
-                <!-- Prototype 3: Right entrance -->
-                <article class="prototype" id="prototype-3" data-aos="slide-left">
-                    <div class="prototype-media">
-                        <img src="Animal.PNG" alt="12V DC-DC Converter prototype - The Animal">
-                    </div>
-                    <div class="prototype-content">
-                        <h3>The Animal</h3>
-                        <p><strong>Robust Performance</strong></p>
-                        <ul>
-                            <li>Input Voltage: 12V</li>
-                            <li>Output Voltage: 5V</li>
-                            <li>Output Current: 2A</li>
-                            <li>Efficiency: 88%</li>
-                            <li>Protection: Multi-Layer</li>
-                        </ul>
-                    </div>
-                </article>
+                    <!-- Prototype 3 -->
+                    <article class="prototype" id="prototype-3" data-aos="slide-left">
+                        <div class="prototype-media">
+                            <img src="Animal.PNG" alt="12V DC-DC Converter prototype - The Animal">
+                        </div>
+                        <div class="prototype-content">
+                            <h3>The Animal</h3>
+                            <p><strong>Robust Performance</strong></p>
+                            <ul>
+                                <li>Input Voltage: 12V</li>
+                                <li>Output Voltage: 5V</li>
+                                <li>Output Current: 2A</li>
+                                <li>Efficiency: 88%</li>
+                                <li>Protection: Multi-Layer</li>
+                            </ul>
+                        </div>
+                    </article>
 
-                <!-- Prototype 4: Left entrance -->
-                <article class="prototype" id="prototype-4" data-aos="slide-right">
-                    <div class="prototype-media">
-                        <img src="Matrix.PNG" alt="24V DC-DC Converter prototype - Matrix">
-                    </div>
-                    <div class="prototype-content">
-                        <h3>Matrix</h3>
-                        <p><strong>Advanced Technology Stack</strong></p>
-                        <ul>
-                            <li>Input Voltage: 24V</li>
-                            <li>Output Voltage: 5V</li>
-                            <li>Output Current: 3A</li>
-                            <li>Efficiency: 92%</li>
-                            <li>Smart Control: AI-Ready</li>
-                        </ul>
-                    </div>
-                </article>
+                    <!-- Prototype 4 -->
+                    <article class="prototype" id="prototype-4" data-aos="slide-right">
+                        <div class="prototype-media">
+                            <img src="Matrix.PNG" alt="24V DC-DC Converter prototype - Matrix">
+                        </div>
+                        <div class="prototype-content">
+                            <h3>Matrix</h3>
+                            <p><strong>Advanced Technology Stack</strong></p>
+                            <ul>
+                                <li>Input Voltage: 24V</li>
+                                <li>Output Voltage: 5V</li>
+                                <li>Output Current: 3A</li>
+                                <li>Efficiency: 92%</li>
+                                <li>Smart Control: AI-Ready</li>
+                            </ul>
+                        </div>
+                    </article>
 
-                <!-- Prototype 5: Right entrance -->
-                <article class="prototype" id="prototype-5" data-aos="slide-left">
-                    <div class="prototype-media">
-                        <img src="Split.PNG" alt="12V DC-DC Converter prototype - Split">
-                    </div>
-                    <div class="prototype-content">
-                        <h3>Split</h3>
-                        <p><strong>Dual-Output Innovation</strong></p>
-                        <ul>
-                            <li>Input Voltage: 12V</li>
-                            <li>Output Voltage: 5V</li>
-                            <li>Output Current: 2A</li>
-                            <li>Efficiency: 88%</li>
-                            <li>Parallel Capable: Yes</li>
-                        </ul>
-                    </div>
-                </article>
+                    <!-- Prototype 5 -->
+                    <article class="prototype" id="prototype-5" data-aos="slide-left">
+                        <div class="prototype-media">
+                            <img src="Split.PNG" alt="12V DC-DC Converter prototype - Split">
+                        </div>
+                        <div class="prototype-content">
+                            <h3>Split</h3>
+                            <p><strong>Dual-Output Innovation</strong></p>
+                            <ul>
+                                <li>Input Voltage: 12V</li>
+                                <li>Output Voltage: 5V</li>
+                                <li>Output Current: 2A</li>
+                                <li>Efficiency: 88%</li>
+                                <li>Parallel Capable: Yes</li>
+                            </ul>
+                        </div>
+                    </article>
 
-                <!-- Prototype 6: Left entrance -->
-                <article class="prototype" id="prototype-6" data-aos="slide-right">
-                    <div class="prototype-media">
-                        <img src="Emerald.png" alt="12V DC-DC Converter prototype - Emerald">
-                    </div>
-                    <div class="prototype-content">
-                        <h3>Emerald</h3>
-                        <p><strong>Premium Efficiency Class</strong></p>
-                        <ul>
-                            <li>Input Voltage: 12V</li>
-                            <li>Output Voltage: 5V</li>
-                            <li>Output Current: 2A</li>
-                            <li>Efficiency: 88%</li>
-                            <li>Lifespan: Extended Rating</li>
-                        </ul>
-                    </div>
-                </article>
+                    <!-- Prototype 6 -->
+                    <article class="prototype" id="prototype-6" data-aos="slide-right">
+                        <div class="prototype-media">
+                            <img src="Emerald.png" alt="12V DC-DC Converter prototype - Emerald">
+                        </div>
+                        <div class="prototype-content">
+                            <h3>Emerald</h3>
+                            <p><strong>Premium Efficiency Class</strong></p>
+                            <ul>
+                                <li>Input Voltage: 12V</li>
+                                <li>Output Voltage: 5V</li>
+                                <li>Output Current: 2A</li>
+                                <li>Efficiency: 88%</li>
+                                <li>Lifespan: Extended Rating</li>
+                            </ul>
+                        </div>
+                    </article>
 
-                <!-- Prototype 7: Right entrance -->
-                <article class="prototype" id="prototype-7" data-aos="slide-left">
-                    <div class="prototype-media">
-                        <img src="Onyx3.PNG" alt="12V DC-DC Converter prototype - Onyx">
-                    </div>
-                    <div class="prototype-content">
-                        <h3>Onyx</h3>
-                        <p><strong>Flagship Solution</strong></p>
-                        <ul>
-                            <li>Input Voltage: 12V</li>
-                            <li>Output Voltage: 5V</li>
-                            <li>Output Current: 2A</li>
-                            <li>Efficiency: 88%</li>
-                            <li>Integration: Enterprise-Ready</li>
-                        </ul>
-                    </div>
-                </article>
+                    <!-- Prototype 7 -->
+                    <article class="prototype" id="prototype-7" data-aos="slide-left">
+                        <div class="prototype-media">
+                            <img src="Onyx3.PNG" alt="12V DC-DC Converter prototype - Onyx">
+                        </div>
+                        <div class="prototype-content">
+                            <h3>Onyx</h3>
+                            <p><strong>Flagship Solution</strong></p>
+                            <ul>
+                                <li>Input Voltage: 12V</li>
+                                <li>Output Voltage: 5V</li>
+                                <li>Output Current: 2A</li>
+                                <li>Efficiency: 88%</li>
+                                <li>Integration: Enterprise-Ready</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
             </section>
         </section>
+
+        <!-- DC Loads Section -->
+        <section id="dc-loads" class="content-section">
+            <div class="prototypes-section">
+                <div class="prototypes-header">
+                    <h2 class="section-title">DC Loads</h2>
+                </div>
+
+                <section class="prototype-list" aria-label="DC Loads list">
+                    <p style="text-align: center; color: #CCCCCC; font-size: 18px; padding: 60px 20px;">Coming soon...</p>
+                </section>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -771,6 +813,20 @@
     </footer>
 
     <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and sections
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding section
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
         // Asignar imagen a cada hotspot según data-image
         document.querySelectorAll('.hotspot').forEach(hotspot => {
             const imageName = hotspot.getAttribute('data-image');
