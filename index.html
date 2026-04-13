@@ -128,17 +128,6 @@
             pointer-events: none;
         }
 
-        /* .hero-content {
-            max-width: 1200px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        } */
-
         .hero-content {
             max-width: 1200px;
             width: 100%;
@@ -249,11 +238,30 @@
             opacity: 0.75;
             filter: none;
         }
-        #heroImage {
-            transition: opacity 0.8s ease-in-out;
+       #heroImage {
+            animation: slideIn 2s ease-in-out infinite;
         }
+    
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            10% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            90% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+        }
+            }
         
-        }
         /* Features Section */
         .features {
             background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
@@ -281,14 +289,6 @@
             border-radius: 2px;
         }
 
-        /* .section-subtitle {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-top: 30px;
-        } */
-
         .section-subtitle {
             font-size: 18px;
             color: #666;
@@ -305,15 +305,6 @@
             margin-top: 60px;
         }
 
-        /* .feature-card {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border-top: 4px solid #EB673A;
-            animation: fadeInUp 0.8s ease-out;
-        } */
 
          .feature-card {
             background: white;
@@ -354,26 +345,6 @@
             gap: 10px;
             white-space: nowrap;
         }
-
-        
-        /* .feature-icon {
-            font-size: 48px;
-            color: #EB673A;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 24px;
-            color: #000;
-            margin-bottom: 15px;
-            font-weight: 300;
-        } */
-
-        /* .feature-card p {
-            color: #666;
-            line-height: 1.8;
-        } */
 
         .feature-card p {
             color: #666;
@@ -775,30 +746,17 @@
             <p>&copy; 2026 Differential Power (DPx). All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- <script>
-        const images = ['Emerald.png', 'Animal.PNG', 'Onyx2.PNG','UFO.PNG']; // Tus imágenes
-        let currentIndex = 0;
     
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById('heroImage').src = images[currentIndex];
-        }, 3000); // Cambia cada 3 segundos
-    </script> -->
-
-    <script>
-        const images = ['Emerald.png', 'Animal.PNG', 'Onyx2.PNG','UFO.PNG'];
-        let currentIndex = 0;
-        const imgElement = document.getElementById('heroImage');
-    
-        setInterval(() => {
-            imgElement.style.opacity = '0';
-            setTimeout(() => {
+        <script>
+            const images = ['Emerald.png', 'Animal.PNG', 'Onyx2.PNG','UFO.PNG'];
+            let currentIndex = 0;
+            const imgElement = document.getElementById('heroImage');
+        
+            setInterval(() => {
                 currentIndex = (currentIndex + 1) % images.length;
                 imgElement.src = images[currentIndex];
-                imgElement.style.opacity = '1';
-            }, 400);
-        }, 2000); // Cambia cada 4 segundos
-    </script>
+            }, 2000);
+        </script>
+
 </body>
 </html>
