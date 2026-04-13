@@ -258,12 +258,11 @@
         
         .carousel-track {
             display: flex;
-            animation: scroll 20s linear infinite;
-            width: 800%; /* 4 imágenes x 2 (duplicadas) = 8 */
+            animation: scroll 35s linear infinite;
         }
         
         .carousel-track img {
-            width: 12.5%; /* 100% / 8 imágenes */
+            width: 15vw;
             height: 100%;
             object-fit: contain;
             flex-shrink: 0;
@@ -274,38 +273,9 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(-50%);
+                transform: translateX(calc(-15vw * 4));
             }
         }
-        
-        @keyframes continuousSlide {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-    
-        @keyframes slideIn {
-            0% {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-            10% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            90% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            100% {
-                opacity: 0;
-                transform: translateX(-100px);
-            }
-        }
-            }
         
         /* Features Section */
         .features {
