@@ -239,7 +239,8 @@
             filter: none;
         }
        #heroImage {
-            animation: slideIn 2s ease-in-out infinite;
+            animation: none; /* Elimina la animación infinita */
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
         }
     
         @keyframes slideIn {
@@ -753,9 +754,19 @@
             const imgElement = document.getElementById('heroImage');
         
             setInterval(() => {
-                currentIndex = (currentIndex + 1) % images.length;
-                imgElement.src = images[currentIndex];
-            }, 2000);
+                // Salida: se desvanece y se desliza
+                imgElement.style.opacity = '0';
+                imgElement.style.transform = 'translateX(-100px)';
+                
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imgElement.src = images[currentIndex];
+                    
+                    // Entrada: reaparece y entra
+                    imgElement.style.opacity = '1';
+                    imgElement.style.transform = 'translateX(0)';
+                }, 400);
+            }, 3000); // Cambia cada 3 segundos
         </script>
 
 </body>
