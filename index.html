@@ -249,6 +249,9 @@
             opacity: 0.75;
             filter: none;
         }
+        #heroImage {
+            transition: opacity 0.8s ease-in-out;
+        }
         
         }
         /* Features Section */
@@ -773,7 +776,7 @@
         </div>
     </footer>
 
-    <script>
+    <!-- <script>
         const images = ['Emerald.png', 'Animal.PNG', 'Onyx2.PNG','UFO.PNG']; // Tus imágenes
         let currentIndex = 0;
     
@@ -781,6 +784,21 @@
             currentIndex = (currentIndex + 1) % images.length;
             document.getElementById('heroImage').src = images[currentIndex];
         }, 3000); // Cambia cada 3 segundos
+    </script> -->
+
+    <script>
+        const images = ['Emerald.png', 'Animal.PNG', 'Onyx2.PNG','UFO.PNG'];
+        let currentIndex = 0;
+        const imgElement = document.getElementById('heroImage');
+    
+        setInterval(() => {
+            imgElement.style.opacity = '0';
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                imgElement.src = images[currentIndex];
+                imgElement.style.opacity = '1';
+            }, 400);
+        }, 4000); // Cambia cada 4 segundos
     </script>
 </body>
 </html>
