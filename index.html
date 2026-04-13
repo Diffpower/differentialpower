@@ -210,7 +210,7 @@
             transform: translateY(-3px);
         }
 
-      .hero-image {
+      /* .hero-image {
             position: absolute;
             right: -50px;
             top: 50%;
@@ -239,8 +239,52 @@
             filter: none;
         }
        #heroImage {
-            animation: none; /* Elimina la animación infinita */
-            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+            animation: continuousSlide 15s linear infinite;
+        } */
+
+        .hero-image {
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 70%;
+            height: 100%;
+            opacity: 0.6;
+            z-index: 0;
+            mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0) 100%);
+            overflow: hidden;
+        }
+        
+        .carousel-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            width: 200%;
+        }
+        
+        .carousel-track img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        @keyframes continuousSlide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
     
         @keyframes slideIn {
@@ -680,7 +724,16 @@
                 </div>
             </div>
            <div class="hero-image">
-                <img id="heroImage" src="Matrix.PNG" alt="Matrix Background">
+                <div class="carousel-track">
+                    <img src="Emerald.png" alt="Emerald">
+                    <img src="Animal.PNG" alt="Animal">
+                    <img src="Onyx2.PNG" alt="Onyx">
+                    <img src="UFO.PNG" alt="UFO">
+                    <img src="Emerald.png" alt="Emerald">
+                    <img src="Animal.PNG" alt="Animal">
+                    <img src="Onyx2.PNG" alt="Onyx">
+                    <img src="UFO.PNG" alt="UFO">
+                </div>
             </div>
         </div>
     </section>
