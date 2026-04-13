@@ -199,20 +199,7 @@
             font-size: 16px;
             color: #CCCCCC;
             line-height: 1.6;
-        }
-
-        .contact-text-link {
-            font-size: 16px;
-            color: #CCCCCC;
-            line-height: 1.6;
-            text-decoration: none;
-            display: block;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .contact-text-link:hover {
-            color: #EB673A;
+            white-space: nowrap;
         }
 
         .contact-link {
@@ -225,6 +212,21 @@
         }
 
         .contact-link:hover {
+            color: #EB673A;
+            border-bottom-color: #EB673A;
+        }
+
+        .address-link {
+            font-size: 16px;
+            color: #CCCCCC;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .address-link:hover {
             color: #EB673A;
             border-bottom-color: #EB673A;
         }
@@ -336,7 +338,7 @@
         }
 
         /* Footer */
-.footer {
+        .footer {
             background-color: #000000;
             color: white;
             padding: 60px 50px 30px;
@@ -360,13 +362,22 @@
             color: #EB673A;
         }
 
-        .footer-section p, .footer-section a {
+        .footer-section p {
             font-size: 14px;
             color: #CCCCCC;
             margin-bottom: 10px;
             text-decoration: none;
             transition: color 0.3s ease;
             display: block;
+        }
+
+        .footer-section a {
+            font-size: 14px;
+            color: #CCCCCC;
+            margin-bottom: 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline;
         }
 
         .footer-section a:hover {
@@ -485,6 +496,14 @@
             .footer-content {
                 gap: 25px;
             }
+
+            .contact-text {
+                white-space: normal;
+            }
+
+            .address-link {
+                white-space: normal;
+            }
         }
     </style>
 </head>
@@ -541,11 +560,10 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="contact-label">Address</div>
-                    <a href="https://www.google.com/maps/search/Playa+de+Riazor+12,+Madrid,+Spain,+28042" target="_blank" class="contact-text-link">
-                        Playa de Riazor 12<br>Madrid, Spain, 28042
-                    </a>
+                    <a href="https://www.google.com/maps/search/Playa+de+Riazor+12,+Madrid,+Spain,+28042" target="_blank" class="address-link">Playa de Riazor 12, Madrid, Spain, 28042</a>
                 </div>
 
+            </div>
         </div>
     </div>
     
@@ -554,11 +572,9 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>About DPx</h3>
-                <!-- <p>Differential Power is your technology partner for the future.</p> -->
+                <p>Differential Power is your technology partner for the future.</p>
                 <div class="social-links">
                     <a href="https://es.linkedin.com/company/differential-power-s-l" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <!-- <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a> -->
                 </div>
             </div>
             <div class="footer-section">
@@ -569,8 +585,8 @@
             </div>
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p> <a href="mailto:diffpower@differentialpower.com">📧 diffpower@differentialpower.com</a></p>
-                <p> <a href="https://www.google.com/maps/search/Playa+de+Riazor+12,+Madrid,+Spain,+28042" target="_blank">📍 Madrid, Spain</a></p>
+                <p>📧 <a href="mailto:diffpower@differentialpower.com">diffpower@differentialpower.com</a></p>
+                <p>📍 <a href="https://www.google.com/maps/search/Playa+de+Riazor+12,+Madrid,+Spain,+28042" target="_blank">Madrid, Spain</a></p>
             </div>
         </div>
         <div class="footer-bottom">
