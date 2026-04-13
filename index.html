@@ -704,8 +704,8 @@
                     <a href="company.html" class="secondary-btn">Learn More →</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="Matrix.PNG" alt="Matrix Background">
+           <div class="hero-image">
+                <img id="heroImage" src="Matrix.PNG" alt="Matrix Background">
             </div>
         </div>
     </section>
@@ -732,72 +732,10 @@
                     <p>Revolutionizing the results demonstrated in the industry with our patent-backed power delivery systems that maximize performance.</p>
                 </div>
 
-                <!-- <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Scalable Innovation</h3>
-                    <p>From startup prototypes to enterprise deployments, our solutions scale seamlessly with your growing needs.</p>
-                </div> -->
-
-                <!-- <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3>Intelligent Control</h3>
-                    <p>AI-driven power management that optimizes consumption in real-time, reducing costs and environmental impact.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Expert Support</h3>
-                    <p>Dedicated technical team available 24/7 to ensure your infrastructure performs at peak efficiency.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Data Insights</h3>
-                    <p>Comprehensive analytics and reporting tools to monitor, analyze, and optimize your power infrastructure.</p>
-                </div> -->
             </div>
         </div>
     </section>
 
-    <!-- Solutions Section -->
-    <!-- <section class="solutions">
-        <div class="solutions-content">
-            <h2 class="section-title">Our Solutions</h2>
-            <p class="section-subtitle">Tailored power delivery systems designed for the specific needs of modern data centers and AI infrastructure.</p>
-            
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <h3>🏢 Data Center Solutions</h3>
-                    <p>Enterprise-grade power delivery systems optimized for maximum efficiency, reliability, and scalability in large-scale data center operations.</p>
-                </div>
-
-                <div class="solution-card">
-                    <h3>🤖 AI Infrastructure</h3>
-                    <p>Specialized power management for GPU clusters and AI accelerators, ensuring consistent performance under demanding workloads.</p>
-                </div>
-
-                <div class="solution-card">
-                    <h3>☁️ Cloud Computing</h3>
-                    <p>Scalable power solutions for cloud infrastructure providers with dynamic load balancing and adaptive energy management.</p>
-                </div>
-
-                <div class="solution-card">
-                    <h3>🔧 Custom Engineering</h3>
-                    <p>Bespoke power delivery designs tailored to your specific architectural requirements and performance goals.</p>
-                </div>
-
-                <div class="solution-card">
-                    <h3>📱 Edge Computing</h3>
-                    <p>Compact, efficient power solutions for distributed edge computing environments and remote installations.</p>
-                </div>
-
-                <div class="solution-card">
-                    <h3>🌱 Sustainable Power</h3>
-                    <p>Eco-friendly power management systems that reduce carbon footprint while maintaining peak performance metrics.</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -834,5 +772,15 @@
             <p>&copy; 2026 Differential Power (DPx). All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const images = ['Emerald.png', 'Animal.PNG', 'Onyx2.PNG','UFO.PNG']; // Tus imágenes
+        let currentIndex = 0;
+    
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById('heroImage').src = images[currentIndex];
+        }, 3000); // Cambia cada 3 segundos
+    </script>
 </body>
 </html>
