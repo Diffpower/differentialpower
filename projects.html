@@ -20,6 +20,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -29,6 +30,7 @@
             background: linear-gradient(180deg, #000000 0%, #1a1a1a 50%, #0d0d0d 100%);
             overflow-x: hidden;
             min-height: 100vh;
+            width: 100%;
         }
 
         /* Navbar */
@@ -46,6 +48,7 @@
             border-bottom: 2px solid #EB673A;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
+            box-sizing: border-box;
         }
 
         .navbar-logo {
@@ -95,6 +98,82 @@
             color: #EB673A;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #EB673A;
+            padding: 20px;
+            flex-direction: column;
+            gap: 0;
+            z-index: 999;
+            animation: slideDown 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 15px 20px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            display: block;
+        }
+
+        .mobile-menu a:hover {
+            background-color: rgba(235, 103, 58, 0.2);
+            border-left-color: #EB673A;
+            color: #EB673A;
+        }
+
         /* Main Content */
         .main {
             width: min(1200px, calc(100% - 48px));
@@ -132,6 +211,8 @@
             margin: 0 auto;
             font-weight: 300;
             line-height: 1.8;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         /* Category Tabs */
@@ -142,6 +223,7 @@
             margin-top: 60px;
             margin-bottom: 80px;
             animation: fadeInUp 0.8s ease-out 0.2s both;
+            flex-wrap: wrap;
         }
 
         .tab-button {
@@ -156,6 +238,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
+            white-space: nowrap;
         }
 
         .tab-button:hover {
@@ -183,6 +266,8 @@
             position: relative;
             margin-bottom: 100px;
             animation: scaleIn 0.8s ease-out 0.2s both;
+            width: 100%;
+            overflow: hidden;
         }
 
         .hero-container {
@@ -205,6 +290,7 @@
             border: 1px solid rgba(235, 103, 58, 0.2);
             transition: none;
             cursor: pointer;
+            max-width: 100%;
         }
 
         .hero-description {
@@ -219,6 +305,8 @@
             margin-right: auto;
             line-height: 1.8;
             animation: fadeInUp 0.8s ease-out 0.2s both;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .hero-section-title {
@@ -233,6 +321,8 @@
             position: relative;
             display: inline-block;
             width: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         
         .hero-section-title span {
@@ -289,6 +379,7 @@
             pointer-events: none;
             padding: 10px;
             border-radius: 8px;
+            max-width: 100%;
         }
 
         .hotspot:hover::before {
@@ -305,6 +396,8 @@
             position: relative;
             display: inline-block;
             text-shadow: 0 4px 20px rgba(235, 103, 58, 0.2);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .section-title::after {
@@ -354,6 +447,7 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
         .prototype:hover {
@@ -381,6 +475,7 @@
             background: transparent;
             filter: drop-shadow(0 8px 20px rgba(235, 103, 58, 0.2));
             transition: transform 0.4s ease;
+            max-width: 100%;
         }
 
         .prototype-content h3 {
@@ -394,6 +489,8 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 0 2px 10px rgba(235, 103, 58, 0.1);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .prototype-content p {
@@ -401,6 +498,8 @@
             color: #CCCCCC;
             margin-bottom: 20px;
             font-weight: 500;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .prototype-content ul {
@@ -415,6 +514,8 @@
             padding-left: 20px;
             font-size: 15px;
             line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .prototype-content ul li::before {
@@ -424,6 +525,7 @@
             color: #EB673A;
             font-weight: 700;
             font-size: 18px;
+            flex-shrink: 0;
         }
 
         /* Alternate layout: image right on even rows */
@@ -443,6 +545,9 @@
             border-top: 2px solid rgba(235, 103, 58, 0.5);
             margin-top: 120px;
             box-shadow: 0 -4px 30px rgba(235, 103, 58, 0.1);
+            width: 100%;
+            box-sizing: border-box;
+            overflow-x: hidden;
         }
 
         .footer-content {
@@ -461,6 +566,8 @@
             margin-bottom: 20px;
             color: #EB673A;
             font-weight: 600;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .footer-section p, .footer-section a {
@@ -471,6 +578,8 @@
             transition: all 0.3s ease;
             display: block;
             font-weight: 300;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .footer-section a:hover {
@@ -482,6 +591,7 @@
             display: flex;
             gap: 15px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .social-links a {
@@ -496,6 +606,7 @@
             text-decoration: none;
             transition: all 0.3s ease;
             margin: 0;
+            flex-shrink: 0;
         }
 
         .social-links a:hover {
@@ -511,6 +622,8 @@
             color: #888;
             font-size: 14px;
             font-weight: 300;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         /* Animations */
@@ -578,15 +691,15 @@
 
         @media (max-width: 768px) {
             .navbar {
-                flex-direction: column;
-                gap: 15px;
                 padding: 15px 20px;
             }
 
             .nav-links {
-                gap: 20px;
-                flex-direction: column;
-                width: 100%;
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
             }
 
             .navbar-logo {
@@ -594,8 +707,9 @@
             }
 
             .main {
-                width: calc(100% - 32px);
+                width: 100%;
                 padding: 100px 16px 40px;
+                max-width: 100vw;
             }
 
             .page-header h1 {
@@ -647,6 +761,10 @@
             .footer-content {
                 gap: 30px;
             }
+
+            .hero-section-title {
+                font-size: 40px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -669,6 +787,19 @@
             .prototype-content ul li {
                 font-size: 14px;
             }
+
+            .main {
+                padding: 90px 12px 30px;
+            }
+
+            .hero-section-title {
+                font-size: 32px;
+            }
+
+            .tab-button {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -683,7 +814,19 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="company.html">Company</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
     <main class="main">
         <!-- Page Header -->
@@ -705,7 +848,7 @@
                 <h2 class="hero-section-title"><span>DC-DC</span> Converters</h2>    
                 
                 <p class="hero-description">
-                    The DPx Law showcases our evolution from our founding in 2019, when we first demonstrated our patented technology through a small prototype, to the kiloampere-level converters we have successfully achieved today.
+                    The DPx Law showcases our evolution from our founding in 2019, when we first demonstrated our patented technology through a small prototype, to the kiloampere-level converters[...]
                 </p>
                 <div class="hero-container">
                     <div class="hero">
@@ -937,6 +1080,33 @@
     </footer>
 
     <script>
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = hamburger.contains(event.target) || mobileMenu.contains(event.target);
+            if (!isClickInsideNav) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
         // Tab switching functionality
         document.querySelectorAll('.tab-button').forEach(button => {
             button.addEventListener('click', function() {
