@@ -579,6 +579,35 @@
         }
 
         @media (max-width: 768px) {
+
+        .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 22px;
+                z-index: 1100;
+            }
+        
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #000;
+                flex-direction: column;
+                gap: 25px;
+                padding: 30px 0;
+                display: none;
+            }
+        
+            .nav-links.active {
+                display: flex;
+            }
+        }
+
+
+
+            
             .navbar {
                 flex-direction: column;
                 gap: 15px;
@@ -635,6 +664,24 @@
             .footer-content {
                 gap: 25px;
             }
+
+            
+            .menu-toggle {
+                display: none;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+            
+            .menu-toggle span {
+                display: block;
+                width: 25px;
+                height: 2px;
+                background: white;
+                margin: 5px 0;
+                transition: all 0.3s ease;
+            }
+
         }
     </style>
 </head>
@@ -644,6 +691,14 @@
         <a href="index.html">
             <img src="DPX_logo_recortado.png" alt="DPx Logo" class="navbar-logo">
         </a>
+
+        
+        <button class="menu-toggle" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <ul class="nav-links">
             <li><a href="company.html">Company</a></li>
             <li><a href="projects.html">Projects</a></li>
@@ -761,6 +816,14 @@
             <p>&copy; 2026 Differential Power (DPx). All rights reserved.</p>
         </div>
     </footer>
+<script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
 
 </body>
 </html>
