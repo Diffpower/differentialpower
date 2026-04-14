@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Differential Power - Next Generation Power Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -13,21 +15,16 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
             color: #333;
-            background-color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* Navbar */
+        /* ================= NAVBAR ================= */
+
         .navbar {
-            background-color: #000000;
+            background: #000;
             color: white;
             display: flex;
             justify-content: space-between;
@@ -38,36 +35,24 @@
             width: 100%;
             z-index: 1000;
             border-bottom: 2px solid #EB673A;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
         }
 
         .navbar-logo {
             height: 50px;
-            width: auto;
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
-        }
-
-        .navbar-logo:hover {
-            transform: scale(1.05);
         }
 
         .nav-links {
-            display: flex;
             list-style: none;
+            display: flex;
             gap: 40px;
-            align-items: center;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            font-size: 16px;
-            transition: all 0.3s ease;
             position: relative;
-            padding-bottom: 5px;
+            padding-bottom: 4px;
         }
 
         .nav-links a::after {
@@ -77,622 +62,148 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: #EB673A;
+            background: #EB673A;
             transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
         }
 
         .nav-links a:hover {
             color: #EB673A;
         }
 
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-        /* Hero Section */
+        /* ===== HAMBURGER BUTTON ===== */
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* ================= HERO ================= */
+
         .hero {
             background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
             color: white;
             min-height: 100vh;
+            padding: 120px 50px 80px;
+            margin-top: 70px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 120px 50px 80px;
             position: relative;
-            overflow: hidden;
-            margin-top: 70px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(235, 103, 58, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(235, 103, 58, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
         }
 
         .hero-content {
             max-width: 1200px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-text {
-            position: relative;
-            z-index: 2;
         }
 
-        .hero-text h1 {
+        .hero h1 {
             font-family: 'Outfit', sans-serif;
-            font-size: 72px;
-            font-weight: 600;
+            font-size: 64px;
             line-height: 1.2;
-            margin-bottom: 30px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1s ease-out;
+            margin-bottom: 20px;
         }
 
-        .hero-text h1 span {
-            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
+        .hero h1 span {
+            background: linear-gradient(135deg, #EB673A, #FF8C42);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
-        .hero-text p {
+        .hero p {
             font-size: 18px;
-            color: #CCCCCC;
-            margin-bottom: 40px;
-            line-height: 1.8;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .primary-btn, .secondary-btn {
-            padding: 16px 40px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 300;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            border: 2px solid #EB673A;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
+            color: #ccc;
+            margin-bottom: 30px;
+            max-width: 700px;
         }
 
         .primary-btn {
-            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(235, 103, 58, 0.3);
-        }
-
-        .primary-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(235, 103, 58, 0.5);
-        }
-
-        .secondary-btn {
-            background: transparent;
-            color: #EB673A;
-            transition: all 0.3s ease;
-        }
-
-        .secondary-btn:hover {
-            background: rgba(235, 103, 58, 0.1);
-            transform: translateY(-3px);
-        }
-      
-        .hero-image {
-            position: absolute;
-            right: -50px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 70%;
-            height: 100%;
-            opacity: 0.6;
-            z-index: 0;
-            mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0) 100%);
-            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0) 100%);
-            overflow: hidden;
-        }
-        
-        .carousel-track {
-            display: flex;
-            animation: scroll 25s linear infinite;
-            gap: 100px;
-        }
-        
-        .carousel-track img {
-            width: 30vw;
-            height: 100%;
-            object-fit: contain;
-            flex-shrink: 0;
-        }
-        
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-30vw * 4));
-            }
-        }
-        
-        /* Features Section */
-        .features {
-            background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
-            padding: 100px 50px;
-        }
-
-        .section-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 56px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #000;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 60px;
-            max-width: 100%;
-            margin-top: 30px;
-            text-align: justify;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-
-         .feature-card {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border-top: 4px solid #EB673A;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 40px rgba(235, 103, 58, 0.2);
-        }
-
-
-       .feature-icon {
-            font-size: 48px;
-            color: #EB673A;
-            margin-bottom: 0;
-            display: inline;
-            margin-right: 10px;
-            flex-shrink: 0;
-        }
-        
-        .feature-card h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 24px;
-            color: #000;
-            margin-bottom: 15px;
-            font-weight: 600;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            white-space: nowrap;
-        }
-
-        .feature-card p {
-            color: #666;
-            line-height: 1.8;
-            text-align: justify;
-        }
-
-        /* Solutions Section */
-        .solutions {
-            background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
-            padding: 100px 50px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .solutions::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(235, 103, 58, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .solutions-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .solutions .section-title {
-            color: white;
-        }
-
-        .solutions .section-title::after {
-            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
-        }
-
-        .solutions .section-subtitle {
-            color: #CCCCCC;
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .solution-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 35px;
-            border-radius: 12px;
-            border-left: 4px solid #EB673A;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .solution-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(235, 103, 58, 0.2);
-        }
-
-        .solution-card h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 20px;
-            color: #EB673A;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .solution-card p {
-            color: #CCCCCC;
-            line-height: 1.8;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
-            padding: 80px 50px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .cta-section h2 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 48px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        .cta-section p {
-            font-size: 18px;
-            margin-bottom: 40px;
-            opacity: 0.95;
-        }
-
-        .cta-btn {
-            background: white;
-            color: #EB673A;
-            padding: 16px 50px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #EB673A, #FF8C42);
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #000000;
             color: white;
-            padding: 60px 50px 30px;
-            border-top: 4px solid #EB673A;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .footer-section h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #EB673A;
-        }
-
-        .footer-section p, .footer-section a {
-            font-size: 14px;
-            color: #CCCCCC;
-            margin-bottom: 10px;
             text-decoration: none;
-            transition: color 0.3s ease;
-            display: block;
+            font-weight: 500;
         }
 
-        .footer-section a:hover {
-            color: #EB673A;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(235, 103, 58, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #EB673A;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin: 0;
-        }
-
-        .social-links a:hover {
-            background: #EB673A;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 30px;
-            text-align: center;
-            color: #999;
-            font-size: 14px;
-        }
-
-        /* Animaciones */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-text h1 {
-                font-size: 52px;
-            }
-        }
+        /* ================= MOBILE ================= */
 
         @media (max-width: 768px) {
 
-        .menu-toggle {
-                display: block;
-                position: absolute;
-                right: 20px;
-                top: 22px;
-                z-index: 1100;
+            .navbar {
+                padding: 15px 20px;
             }
-        
+
+            .menu-toggle {
+                display: block;
+            }
+
             .nav-links {
                 position: absolute;
-                top: 70px;
+                top: 100%;
                 left: 0;
                 width: 100%;
                 background: #000;
                 flex-direction: column;
+                align-items: center;
                 gap: 25px;
-                padding: 30px 0;
+                padding: 25px 0;
                 display: none;
+                border-bottom: 2px solid #EB673A;
             }
-        
+
             .nav-links.active {
                 display: flex;
             }
-        }
-
-
-
-            
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-                padding: 15px 20px;
-            }
-
-            .nav-links {
-                gap: 20px;
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .navbar-logo {
-                height: 40px;
-            }
 
             .hero {
+                margin-top: 90px;
                 padding: 100px 20px 60px;
-                margin-top: 150px;
+                text-align: center;
             }
 
-            .hero-text h1 {
+            .hero h1 {
                 font-size: 40px;
             }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .features {
-                padding: 60px 20px;
-            }
-
-            .section-title {
-                font-size: 36px;
-            }
-
-            .solutions {
-                padding: 60px 20px;
-            }
-
-            .cta-section {
-                padding: 60px 20px;
-            }
-
-            .cta-section h2 {
-                font-size: 36px;
-            }
-
-            .footer {
-                padding: 40px 20px 20px;
-            }
-
-            .footer-content {
-                gap: 25px;
-            }
-
-            
-            .menu-toggle {
-                display: none;
-                background: none;
-                border: none;
-                cursor: pointer;
-            }
-            
-            .menu-toggle span {
-                display: block;
-                width: 25px;
-                height: 2px;
-                background: white;
-                margin: 5px 0;
-                transition: all 0.3s ease;
-            }
-
         }
+
+        /* ===== HAMBURGER ANIMATION ===== */
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
     </style>
 </head>
+
 <body>
-    <!-- Navbar -->
+
+    <!-- NAVBAR -->
     <nav class="navbar">
         <a href="index.html">
             <img src="DPX_logo_recortado.png" alt="DPx Logo" class="navbar-logo">
         </a>
 
-        
         <button class="menu-toggle" aria-label="Open menu">
             <span></span>
             <span></span>
@@ -706,124 +217,33 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-text">
-                <h1>Powering the <span>Next Generation</span> of AI Chips</h1>
-                <p>Revolutionary power delivery solutions that redefine efficiency and performance. Experience the future of power conversion for data centers and AI infrastructure.</p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="primary-btn">Get Started Today</a>
-                    <a href="company.html" class="secondary-btn">Learn More →</a>
-                </div>
-            </div>
-           <div class="hero-image">
-                <div class="carousel-track">
-                    <img src="Emerald.png" alt="Emerald">
-                    <img src="Matrix.PNG" alt="Matrix">
-                    <img src="Animal.PNG" alt="Animal">
-                    <img src="Onyx2.PNG" alt="Onyx">
-                    <img src="UFO.PNG" alt="UFO">
-                    <img src="Emerald.png" alt="Emerald">
-                    <img src="Matrix.PNG" alt="Matrix">
-                    <img src="Animal.PNG" alt="Animal">
-                    <img src="Onyx2.PNG" alt="Onyx">
-                    <img src="UFO.PNG" alt="UFO">
-                    <img src="Emerald.png" alt="Emerald">
-                    <img src="Matrix.PNG" alt="Matrix">
-                    <img src="Animal.PNG" alt="Animal">
-                    <img src="Onyx2.PNG" alt="Onyx">
-                    <img src="UFO.PNG" alt="UFO">
-                    <img src="Emerald.png" alt="Emerald">
-                    <img src="Matrix.PNG" alt="Matrix">
-                    <img src="Animal.PNG" alt="Animal">
-                    <img src="Onyx2.PNG" alt="Onyx">
-                    <img src="UFO.PNG" alt="UFO">
-                    <img src="Emerald.png" alt="Emerald">
-                    <img src="Matrix.PNG" alt="Matrix">
-                    <img src="Animal.PNG" alt="Animal">
-                    <img src="Onyx2.PNG" alt="Onyx">
-                    <img src="UFO.PNG" alt="UFO">
-                    <img src="Emerald.png" alt="Emerald">
-                    <img src="Matrix.PNG" alt="Matrix">
-                    <img src="Animal.PNG" alt="Animal">
-                    <img src="Onyx2.PNG" alt="Onyx">
-                    <img src="UFO.PNG" alt="UFO">
-                </div>
-            </div>
+            <h1>Powering the <span>Next Generation</span> of AI Chips</h1>
+            <p>Revolutionary power delivery solutions that redefine efficiency and performance for data centers and AI infrastructure.</p>
+            <a href="contact.html" class="primary-btn">Get Started Today</a>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">Why DPx?</h2>
-            <p class="section-subtitle">With our patented solutions, we are redefining the future of power delivery in data centers.</p>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3><div class="feature-icon">⚡</div><strong>High Current</strong></h3>
-                    <p>We are transforming the power delivery landscape with our patented converters that deliver up to <strong>4,000 A</strong>, enabling unprecedented performance for next-generation data centers.</p>
-                </div>
+    <!-- JS -->
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links a');
 
-                <div class="feature-card">
-                    <h3><div class="feature-icon">🔋</div><strong>Direct-to-Chip</strong></h3>
-                    <p>Simplified power delivery with our single-stage converters: wide input range from <strong>48V to 800V</strong>, optimized <strong>0.75V</strong> output for advanced chip architectures.</p>
-                </div>
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
 
-                <div class="feature-card">
-                    <h3><div class="feature-icon">💡</div><strong>Next-Gen Efficiency</strong></h3>
-                    <p>Revolutionizing the results demonstrated in the industry with our patent-backed power delivery systems that maximize performance.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Transform Your Infrastructure?</h2>
-            <p>Join leading companies worldwide who trust Differential Power to deliver next-generation power solutions.</p>
-            <a href="contact.html" class="cta-btn">Start Your Journey Today</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About DPx</h3>
-                <!-- <p>Differential Power is your technology partner for the future.</p> -->
-                <div class="social-links">
-                    <a href="https://es.linkedin.com/company/differential-power-s-l" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="company.html">Company</a>
-                <a href="projects.html">Projects</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p> <a href="mailto:diffpower@differentialpower.com">📧 diffpower@differentialpower.com</a></p>
-                <p> <a href="https://www.google.com/maps/search/Playa+de+Riazor+12,+Madrid,+Spain,+28042" target="_blank">📍 Madrid, Spain</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Differential Power (DPx). All rights reserved.</p>
-        </div>
-    </footer>
-<script>
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-</script>
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                toggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
