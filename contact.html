@@ -85,6 +85,82 @@
             color: #EB673A;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #EB673A;
+            padding: 20px;
+            flex-direction: column;
+            gap: 0;
+            z-index: 999;
+            animation: slideDown 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 15px 20px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            display: block;
+        }
+
+        .mobile-menu a:hover {
+            background-color: rgba(235, 103, 58, 0.2);
+            border-left-color: #EB673A;
+            color: #EB673A;
+        }
+
         .cta-button {
             background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
             color: white;
@@ -238,17 +314,17 @@
         }
 
         .social-links a {
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             background: rgba(235, 103, 58, 0.2);
-            border-radius: 8px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #EB673A;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 20px;
+            margin: 0;
         }
 
         .social-links a:hover {
@@ -356,22 +432,13 @@
         }
 
         .footer-section h3 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 18px;
             margin-bottom: 20px;
             color: #EB673A;
         }
 
-        .footer-section p {
-            font-size: 14px;
-            color: #CCCCCC;
-            margin-bottom: 10px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: block;
-        }
-
-        .footer-section a {
+        .footer-section p, .footer-section a {
             font-size: 14px;
             color: #CCCCCC;
             margin-bottom: 10px;
@@ -382,32 +449,6 @@
 
         .footer-section a:hover {
             color: #EB673A;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(235, 103, 58, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #EB673A;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin: 0;
-        }
-
-        .social-links a:hover {
-            background: #EB673A;
-            color: white;
-            transform: translateY(-3px);
         }
 
         .footer-bottom {
@@ -444,15 +485,15 @@
         /* Responsive */
         @media (max-width: 768px) {
             .navbar {
-                flex-direction: column;
-                gap: 15px;
                 padding: 15px 20px;
             }
 
             .nav-links {
-                gap: 20px;
-                flex-direction: column;
-                width: 100%;
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
             }
 
             .navbar-logo {
@@ -465,7 +506,7 @@
             }
 
             .contact-container h1 {
-                font-size: 40px;
+                font-size: 36px;
                 margin-bottom: 40px;
             }
 
@@ -480,13 +521,51 @@
                 min-height: auto;
             }
 
+            .contact-icon {
+                font-size: 24px;
+            }
+
+            .contact-label {
+                font-size: 16px;
+            }
+
+            .contact-link {
+                font-size: 14px;
+            }
+
+            .address-link {
+                white-space: normal;
+                font-size: 14px;
+            }
+
+            .contact-text {
+                white-space: normal;
+                font-size: 14px;
+            }
+
             .form-section {
                 padding: 25px;
                 grid-column: 1;
             }
 
             .form-section h2 {
-                font-size: 24px;
+                font-size: 22px;
+            }
+
+            .form-group label {
+                font-size: 13px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 12px 14px;
+                font-size: 15px;
+            }
+
+            .submit-btn {
+                padding: 12px 30px;
+                font-size: 15px;
+                width: 100%;
             }
 
             .footer {
@@ -495,14 +574,6 @@
 
             .footer-content {
                 gap: 25px;
-            }
-
-            .contact-text {
-                white-space: normal;
-            }
-
-            .address-link {
-                white-space: normal;
             }
         }
     </style>
@@ -518,7 +589,19 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="company.html">Company</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
     
     <!-- Contact Section -->
     <div class="contact-container">
@@ -567,14 +650,15 @@
         </div>
     </div>
     
-    <!-- Footer -->
+   <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>About DPx</h3>
-                <!-- <p>Differential Power is your technology partner for the future.</p> -->
                 <div class="social-links">
-                    <a href="https://es.linkedin.com/company/differential-power-s-l" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/company/differential-power-s-l" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
                 </div>
             </div>
             <div class="footer-section">
@@ -593,5 +677,35 @@
             <p>&copy; 2026 Differential Power (DPx). All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = hamburger.contains(event.target) || mobileMenu.contains(event.target);
+            if (!isClickInsideNav) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+
 </body>
 </html>
