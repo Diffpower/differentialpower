@@ -89,6 +89,81 @@
             color: #EB673A;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #EB673A;
+            padding: 20px;
+            flex-direction: column;
+            gap: 0;
+            z-index: 999;
+            animation: slideDown 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 15px 20px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            display: block;
+        }
+
+        .mobile-menu a:hover {
+            background-color: rgba(235, 103, 58, 0.2);
+            border-left-color: #EB673A;
+            color: #EB673A;
+        }
 
         /* Hero Section */
         .hero {
@@ -101,7 +176,7 @@
             padding: 120px 50px 80px;
             position: relative;
             overflow: hidden;
-            margin-top: 70px;
+            margin-top: 0px;
         }
 
         .hero::before {
@@ -580,15 +655,15 @@
 
         @media (max-width: 768px) {
             .navbar {
-                flex-direction: column;
-                gap: 15px;
                 padding: 15px 20px;
             }
 
             .nav-links {
-                gap: 20px;
-                flex-direction: column;
-                width: 100%;
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
             }
 
             .navbar-logo {
@@ -597,15 +672,25 @@
 
             .hero {
                 padding: 100px 20px 60px;
-                margin-top: 150px;
+                margin-top: 0px;
             }
 
             .hero-text h1 {
-                font-size: 40px;
+                font-size: 36px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
             }
 
             .hero-buttons {
                 flex-direction: column;
+            }
+
+            .primary-btn, .secondary-btn {
+                width: 100%;
+                padding: 14px 20px;
+                font-size: 15px;
             }
 
             .features {
@@ -616,8 +701,37 @@
                 font-size: 36px;
             }
 
+            .section-subtitle {
+                font-size: 16px;
+            }
+
+            .feature-card {
+                padding: 30px 20px;
+            }
+
+            .feature-card h3 {
+                font-size: 20px;
+                white-space: normal;
+            }
+
+            .feature-card p {
+                font-size: 15px;
+            }
+
             .solutions {
                 padding: 60px 20px;
+            }
+
+            .solution-card {
+                padding: 25px 20px;
+            }
+
+            .solution-card h3 {
+                font-size: 18px;
+            }
+
+            .solution-card p {
+                font-size: 14px;
             }
 
             .cta-section {
@@ -625,7 +739,16 @@
             }
 
             .cta-section h2 {
-                font-size: 36px;
+                font-size: 32px;
+            }
+
+            .cta-section p {
+                font-size: 16px;
+            }
+
+            .cta-btn {
+                padding: 14px 40px;
+                font-size: 15px;
             }
 
             .footer {
@@ -649,7 +772,19 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="company.html">Company</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -708,12 +843,12 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <h3><div class="feature-icon">⚡</div><strong>High Current</strong></h3>
-                    <p>We are transforming the power delivery landscape with our patented converters that deliver up to <strong>4,000 A</strong>, enabling unprecedented performance for next-generation data centers.</p>
+                    <p>We are transforming the power delivery landscape with our patented converters that deliver up to <strong>4,000 A</strong>, enabling unprecedented performance for next-generation[...]
                 </div>
 
                 <div class="feature-card">
                     <h3><div class="feature-icon">🔋</div><strong>Direct-to-Chip</strong></h3>
-                    <p>Simplified power delivery with our single-stage converters: wide input range from <strong>48V to 800V</strong>, optimized <strong>0.75V</strong> output for advanced chip architectures.</p>
+                    <p>Simplified power delivery with our single-stage converters: wide input range from <strong>48V to 800V</strong>, optimized <strong>0.75V</strong> output for advanced chip archite[...]
                 </div>
 
                 <div class="feature-card">
@@ -762,5 +897,35 @@
         </div>
     </footer>
 
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = hamburger.contains(event.target) || mobileMenu.contains(event.target);
+            if (!isClickInsideNav) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+
 </body>
 </html>
+
