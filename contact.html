@@ -161,25 +161,7 @@
             color: #EB673A;
         }
 
-        .cta-button {
-            background: linear-gradient(135deg, #EB673A 0%, #FF8C42 100%);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(235, 103, 58, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(235, 103, 58, 0.5);
-        }
-
-        /* Contact Container */
+        /* Contact Container y Layout a 2 Columnas */
         .contact-container {
             background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
             color: white;
@@ -220,6 +202,7 @@
             margin-bottom: 50px;
             line-height: 1.2;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
         .contact-container h1 span {
@@ -229,13 +212,19 @@
             background-clip: text;
         }
 
-       .contact-info {
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-bottom: 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
             width: 100%;
-            max-width: 600px;
+            align-items: start;
+        }
+
+       .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
         }
 
         .contact-item {
@@ -248,7 +237,6 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            min-height: 200px;
         }
 
         .contact-item:hover {
@@ -271,38 +259,17 @@
             margin-bottom: 5px;
         }
 
-        .contact-text {
-            font-size: 16px;
-            color: #CCCCCC;
-            line-height: 1.6;
-            white-space: nowrap;
-        }
-
-        .contact-link {
+        .contact-link, .address-link {
             font-size: 16px;
             color: #CCCCCC;
             text-decoration: none;
             transition: all 0.3s ease;
             border-bottom: 2px solid transparent;
             display: inline-block;
+            word-break: break-all;
         }
 
-        .contact-link:hover {
-            color: #EB673A;
-            border-bottom-color: #EB673A;
-        }
-
-        .address-link {
-            font-size: 16px;
-            color: #CCCCCC;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-bottom: 2px solid transparent;
-            display: inline-block;
-            white-space: nowrap;
-        }
-
-        .address-link:hover {
+        .contact-link:hover, .address-link:hover {
             color: #EB673A;
             border-bottom-color: #EB673A;
         }
@@ -310,7 +277,7 @@
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 5px;
         }
 
         .social-links a {
@@ -333,6 +300,7 @@
             transform: translateY(-3px);
         }
 
+        /* Estilos del Formulario */
         .form-section {
             background: rgba(255, 255, 255, 0.05);
             padding: 40px;
@@ -340,7 +308,7 @@
             border: 1px solid rgba(235, 103, 58, 0.2);
             backdrop-filter: blur(10px);
             animation: scaleIn 0.8s ease-out;
-            grid-column: 1 / -1;
+            width: 100%;
         }
 
         .form-section h2 {
@@ -406,11 +374,20 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(235, 103, 58, 0.3);
             font-family: 'Poppins', sans-serif;
+            width: 100%;
         }
 
-        .submit-btn:hover {
+        .submit-btn:hover:not(:disabled) {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(235, 103, 58, 0.5);
+        }
+
+        /* Estilo para el botón APAGADO (Desactivado) */
+        .submit-btn:disabled {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.4);
+            cursor: not-allowed;
+            box-shadow: none;
         }
 
         /* Footer */
@@ -423,7 +400,7 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
             max-width: 1200px;
@@ -438,16 +415,7 @@
             color: #EB673A;
         }
 
-        .footer-section p {
-            font-size: 14px;
-            color: #CCCCCC;
-            margin-bottom: 10px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: block;
-        }
-
-        .footer-section a {
+        .footer-section p, .footer-section a {
             font-size: 14px;
             color: #CCCCCC;
             margin-bottom: 10px;
@@ -460,32 +428,6 @@
             color: #EB673A;
         }
 
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(235, 103, 58, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #EB673A;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin: 0;
-        }
-
-        .social-links a:hover {
-            background: #EB673A;
-            color: white;
-            transform: translateY(-3px);
-        }
-
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 30px;
@@ -494,92 +436,60 @@
             font-size: 14px;
         }
 
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 40px !important;
+            height: 40px !important;
+            background: rgba(235, 103, 58, 0.2) !important;
+            border-radius: 50% !important; /* Esto hace el círculo perfecto */
+            display: flex !important;
+            align-items: center !important; /* Lo centra en vertical */
+            justify-content: center !important; /* Lo centra en horizontal */
+            color: #EB673A !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+            font-size: 18px !important;
+            margin: 0 !important;
+        }
+
+        .footer-social a:hover {
+            background: #EB673A !important;
+            color: white !important;
+            transform: translateY(-3px) !important;
+        }
+
         /* Animaciones */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-            }
+        /* Responsive Móvil */
+        @media (max-width: 968px) {
+            .navbar { padding: 15px 20px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .navbar-logo { height: 40px; }
 
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .navbar-logo {
-                height: 40px;
-            }
-
-            .contact-container {
-                min-height: auto;
-                padding: 40px 20px;
-            }
-
-            .contact-container h1 {
-                font-size: 40px;
-                margin-bottom: 40px;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-                gap: 25px;
-                margin-bottom: 40px;
-            }
-
-            .contact-item {
-                padding: 25px;
-                min-height: auto;
-            }
-
-            .form-section {
-                padding: 25px;
-                grid-column: 1;
-            }
-
-            .form-section h2 {
-                font-size: 24px;
-            }
-
-            .footer {
-                padding: 40px 20px 20px;
-            }
-
-            .footer-content {
-                gap: 25px;
-            }
-
-            .contact-text {
-                white-space: normal;
-            }
-
-            .address-link {
-                white-space: normal;
-            }
+            .contact-container { padding: 40px 20px; }
+            .contact-container h1 { font-size: 40px; margin-bottom: 40px; }
+            
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            
+            .form-section { padding: 25px; }
+            .form-section h2 { font-size: 24px; }
+            .footer { padding: 40px 20px 20px; }
+            .footer-content { gap: 25px; }
         }
     </style>
 </head>
@@ -613,70 +523,135 @@
         <div class="contact-content">
             <h1>Let's <span>Connect</span></h1>
 
-            <div class="contact-info">
-                <!-- Email 1 -->
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+            <div class="contact-grid">
+                
+                <!-- Columna Izquierda: Información de contacto -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-label">General Inquiries</div>
+                        <a class="contact-link" href="mailto:diffpower@differentialpower.com">diffpower@differentialpower.com</a>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/company/differential-power-s-l" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="contact-label">Email</div>
-                    <a class="contact-link" href="mailto:diffpower@differentialpower.com">diffpower@differentialpower.com</a>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/differential-power-s-l" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-label">Technical Management</div>
+                        <a class="contact-link" href="mailto:jcobos@differentialpower.com">jcobos@differentialpower.com</a>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/jos%C3%A9-a-cobos-54097410/" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-label">Headquarters</div>
+                        <a href="https://www.google.com/maps/search/Playa+de+Riazor+12,+Madrid,+Spain,+28042" target="_blank" class="address-link">Playa de Riazor 12, Madrid, Spain, 28042</a>
                     </div>
                 </div>
 
-                <!-- Email 2 -->
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-label">Email</div>
-                    <a class="contact-link" href="mailto:jcobos@differentialpower.com">jcobos@differentialpower.com</a>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/jos%C3%A9-a-cobos-54097410/" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
+                <!-- Columna Derecha: Formulario de mensaje -->
+                <!--
+                <div class="form-section">
+                    <h2>Send us a message</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        -->
+                        
+                        <!-- RGPD Checkbox -->
+                        <!--
+                        <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
+                            <input type="checkbox" id="privacy" name="privacy" style="width: auto; margin-top: 4px;">
+                            <label for="privacy" style="font-size: 13px; color: #CCCCCC; display: inline; text-transform: none;">
+                                I have read and accept the <a href="privacy-policy.html" style="color: #EB673A; text-decoration: underline;">Privacy Policy</a>.
+                            </label>
+                        </div>
+                        -->
 
-                <!-- Address -->
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-label">Address</div>
-                    <a href="https://www.google.com/maps/search/Playa+de+Riazor+12,+Madrid,+Spain,+28042" target="_blank" class="address-link">Playa de Riazor 12, Madrid, Spain, 28042</a>
+                        <!-- Botón modificado: está apagado ("disabled") por defecto y le ponemos el id="submitBtn" -->
+                         <!--
+                        <button type="submit" id="submitBtn" class="submit-btn" disabled>Send Message</button>
+                    </form>
                 </div>
+                --> 
 
             </div>
         </div>
     </div>
     
-    <!-- Footer -->
+   <!-- Footer-->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>About DPx</h3>
-                <!-- <p>Differential Power is your technology partner for the future.</p> -->
-                <div class="social-links">
-                    <a href="https://es.linkedin.com/company/differential-power-s-l" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <!-- Le cambiamos el nombre a "footer-social" para que sea único -->
+                <div class="footer-social">
+                    <!-- He cambiado 'fa-linkedin' por 'fa-linkedin-in' para que quede el texto limpio sin doble cuadrado -->
+                    <a href="https://www.linkedin.com/company/differential-power-s-l" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
+            
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <a href="company.html">Company</a>
                 <a href="projects.html">Projects</a>
                 <a href="contact.html">Contact</a>
             </div>
+
+            <!-- Columna Legal en Inglés -->
+             <!--
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="legal-notice.html">Legal Notice</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+            -->
+
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p> <a href="mailto:diffpower@differentialpower.com">📧 diffpower@differentialpower.com</a></p>
-                <p> <a href="https://www.google.com/maps/search/Playa+de+Riazor+12,+Madrid,+Spain,+28042" target="_blank">📍 Madrid, Spain</a></p>
+                <p><a href="mailto:diffpower@differentialpower.com">📧 diffpower@differentialpower.com</a></p>
+                <p><a href="https://www.google.com/maps/search/Playa+de+Riazor+12,+Madrid,+Spain,+28042" target="_blank">📍 Madrid, Spain</a></p>
             </div>
         </div>
+
+        <!-- ESPACIO DE LOGOS (Bloques 2 y 3) -->
+        <div class="footer-logos" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 0; display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap;">
+            
+            <!-- BLOQUE 2: Certificaciones -->
+            <img src="ce-mark.png" alt="CE Mark" style="height: 45px; filter: grayscale(100%) brightness(200%); opacity: 0.7; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+            
+            <img src="rohs-logo.png" alt="RoHS Compliant" style="height: 45px; filter: grayscale(100%) brightness(200%); opacity: 0.7; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+            
+            <img src="iso-9001.png" alt="ISO 9001 Certified" style="height: 50px; filter: grayscale(100%) brightness(200%); opacity: 0.7; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+
+            <!-- Separador visual discreto -->
+            <div style="height: 40px; width: 1px; background-color: rgba(255,255,255,0.2);"></div>
+
+            <!-- BLOQUE 3: Instituciones -->
+            <img src="logo-ministerio.png" alt="Ministerio de Ciencia" style="height: 55px; filter: grayscale(100%) brightness(200%); opacity: 0.7; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+            
+            <img src="logo-cdti.png" alt="CDTI" style="height: 45px; filter: grayscale(100%) brightness(200%); opacity: 0.7; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+
+        </div>
+
         <div class="footer-bottom">
             <p>&copy; 2026 Differential Power (DPx). All rights reserved.</p>
         </div>
@@ -708,6 +683,15 @@
                 hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
             }
+        });
+
+        // LÓGICA DE LA CASILLA DE PRIVACIDAD
+        const privacyCheckbox = document.getElementById('privacy');
+        const submitBtn = document.getElementById('submitBtn');
+
+        privacyCheckbox.addEventListener('change', function() {
+            // Si la casilla está marcada, quita el 'disabled'. Si no, lo vuelve a poner.
+            submitBtn.disabled = !this.checked;
         });
     </script>
 </body>
