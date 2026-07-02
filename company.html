@@ -425,13 +425,41 @@
             color: #EB673A;
         }
 
-        .social-links {
+       /* 1. Iconos para la sección de CONTACTO (Cuadrados y más grandes) */
+        .contact-info .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-info .social-links a {
+            width: 44px;
+            height: 44px;
+            background: rgba(235, 103, 58, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #EB673A;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+
+        .contact-info .social-links a:hover {
+            background: #EB673A;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* 2. Iconos para el FOOTER (Redondos y más pequeños) */
+        .footer .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
 
-        .social-links a {
+        .footer .social-links a {
             width: 40px;
             height: 40px;
             background: rgba(235, 103, 58, 0.2);
@@ -443,9 +471,10 @@
             text-decoration: none;
             transition: all 0.3s ease;
             margin: 0;
+            font-size: 16px;
         }
 
-        .social-links a:hover {
+        .footer .social-links a:hover {
             background: #EB673A;
             color: white;
             transform: translateY(-3px);
@@ -457,6 +486,11 @@
             text-align: center;
             color: #999;
             font-size: 14px;
+        }
+
+        .footer-logo {
+            height: 70px;
+            max-width: 100%;
         }
 
         /* Animaciones */
@@ -563,6 +597,11 @@
             .footer-content {
                 gap: 25px;
             }
+
+            .footer-logo {
+                height: 40px;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -592,72 +631,93 @@
     </div>
     
     <!-- Main Content - Video Player -->
-    <div class="main-content">
+    <!-- <div class="main-content">
         <div class="video-section">
             <h1 class="video-title"><span>Powering the Next Generation of AI chips</span></h1>  
             <div class="video-player-container">
                 <iframe 
                     width="100%" 
                     height="600" 
-                    src="https://www.youtube.com/embed/7QEd2HjuOpM?autoplay=1&modestbranding=1&rel=0" 
+                    src="https://www.youtube-nocookie.com/embed/7QEd2HjuOpM?autoplay=1&modestbranding=1&rel=0" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
                 </iframe>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Info Section -->
     <div class="info-section">
         <div class="info-content">
             <h1>About <span>Us</span></h1>
-            <p>Welcome to Differential Power. We deliver innovative power electronics solutions, driven by a team committed to engineering excellence.</p>
+            <p>Headquartered in Madrid, Differential Power (DPx) is an engineering firm dedicated to pushing the boundaries of power electronics. We design and manufacture advanced power architectures for high-performance computing environments.</p>
             
             <h2>Our Mission</h2>
             <div class="mission-card">
-                <p>Provide our clients with products that exceed their expectations and help them achieve their objectives, being the trusted technology partner in the industry.</p>
+                <p>To engineer robust power conversion architectures that solve the critical density and thermal bottlenecks of modern computing infrastructure, minimizing energy loss without compromising reliability.</p>
             </div>
             
-            <h2>Why Choose Us</h2>
             <div class="values-container">
                 <div class="value-card">
-                    <h3>🎯 Innovation</h3>
-                    <p>With our patent families, we create cutting-edge solutions tailored to your business</p>
+                    <h3><i class="fa-solid fa-microchip" style="color: #f36424; margin-right: 10px;"></i>Proprietary Technology</h3>
+                    <p>Backed by multiple patent families, we design our converter architectures from the ground up to overcome the limitations of standard power delivery systems.</p>
                 </div>
                 <div class="value-card">
-                    <h3>💼 Experience</h3>
-                    <p>Working in the power electronic sector since 2019</p>
+                    <h3><i class="fa-solid fa-users-gear" style="color: #f36424; margin-right: 10px;"></i>Proven Engineering</h3>
+                    <p>Since 2019, our dedicated team has successfully scaled our core technology from initial prototypes to robust, kiloampere-level deployments.</p>
                 </div>
                 <div class="value-card">
-                    <h3>⚡ Efficiency</h3>
-                    <p>Revolutionizing industry-demonstrated results</p>
+                    <h3><i class="fa-solid fa-temperature-arrow-down" style="color: #f36424; margin-right: 10px;"></i>Maximum Performance</h3>
+                    <p>Our single-stage converters are strictly engineered to maximize absolute reliability and significantly reduce thermal output in high-demand facilities.</p>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Footer -->
+    <!-- Footer-->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>About DPx</h3>
                 <div class="social-links">
-                    <a href="https://es.linkedin.com/company/differential-power-s-l" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/company/differential-power-s-l" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
+            
+            
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <a href="company.html">Company</a>
                 <a href="projects.html">Projects</a>
                 <a href="contact.html">Contact</a>
             </div>
+            
+            <!-- Columna Legal en Inglés -->
+             <!--
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="legal-notice.html">Legal Notice</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+            -->
+
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p> <a href="mailto:diffpower@differentialpower.com">📧 diffpower@differentialpower.com</a></p>
-                <p> <a href="https://www.google.com/maps/search/Playa+de+Riazor+12,+Madrid,+Spain,+28042" target="_blank">📍 Madrid, Spain</a></p>
+                <p><a href="mailto:diffpower@differentialpower.com">📧 diffpower@differentialpower.com</a></p>
+                <p><a href="https://www.google.com/maps/search/Playa+de+Riazor+12,+Madrid,+Spain,+28042" target="_blank">📍 Madrid, Spain</a></p>
             </div>
         </div>
+
+        <!-- ESPACIO DE LOGOS (Bloques 2 y 3) -->
+        <div class="footer-logos" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 0; display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap;">
+            
+            <!-- BLOQUE 2: Certificaciones -->
+            <img src="Logo.png" alt="CE Mark" class="footer-logo";">
+
+        </div>
+
         <div class="footer-bottom">
             <p>&copy; 2026 Differential Power (DPx). All rights reserved.</p>
         </div>
